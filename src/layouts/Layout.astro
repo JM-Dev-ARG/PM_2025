@@ -1,0 +1,198 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+// Importación de estilos globales, incluyendo Tailwind CSS
+import '../styles/global.css';
+
+//importacion de imagenes
+import icono_metadata from '@/assets/astro.svg';
+import favicon from '@/assets/astro.svg';
+
+//keywords
+const keywords = ['astro', 'framework', 'javascript'];
+
+//data para schema
+import dataSchema from '@/Data/seoSchema.json';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+
+// Obtenemos la URL base del sitio desde la configuración de Astro.
+const site = Astro.site;
+const canonicalURL = new URL(Astro.url.pathname, site);
+
+// Schema genérico para WebPage y Organization
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description: description,
+  url: canonicalURL.href,
+  logo: dataSchema.logo,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: dataSchema.contactPoint.telephone,
+    contactType: 'Atención al cliente',
+    areaServed: dataSchema.contactPoint.areaServed,
+    availableLanguage: dataSchema.contactPoint.availableLanguage,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: dataSchema.publisher.name,
+    url: dataSchema.publisher.url,
+    logo: {
+      '@type': 'ImageObject',
+      url: dataSchema.publisher.logo.url,
+    },
+  },
+  sameAs: dataSchema.sameAs,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: dataSchema.address.streetAddress,
+    addressLocality: dataSchema.address.addressLocality,
+    addressRegion: dataSchema.address.addressRegion,
+    postalCode: dataSchema.address.postalCode,
+    addressCountry: dataSchema.address.addressCountry,
+  },
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{title}</title>
+
+    <meta
+      name="description"
+      content={description}
+    />
+
+    <link
+      rel="canonical"
+      href={canonicalURL.href}
+    />
+
+    <meta
+      name="keywords"
+      content={keywords.join(', ')}
+    />
+
+    <meta
+      name="robots"
+      content="index, follow"
+    />
+    <meta
+      name="author"
+      content="Ice-Dev para Panambi"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={favicon.src}
+    />
+    <link
+      rel="apple-touch-icon"
+      href={favicon.src}
+    />
+
+    <ClientRouter />
+
+    <!-- Schema.org markup for Google -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schema)}
+    />
+    <!-- End Schema.org markup for Google -->
+
+    <!-- Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content={canonicalURL.href}
+    />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:title"
+      content={title + ' - Inicio'}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:image"
+      content={icono_metadata.src}
+    />
+    <!-- End Facebook Meta Tags -->
+
+    <!-- Twitter Meta Tags -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      property="twitter:domain"
+      content={canonicalURL.hostname}
+    />
+    <meta
+      property="twitter:url"
+      content={canonicalURL.href}
+    />
+    <meta
+      name="twitter:title"
+      content={title + ' - Inicio'}
+    />
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+    <meta
+      name="twitter:image"
+      content={icono_metadata.src}
+    />
+    <!-- End Twitter Meta Tags -->
+
+    <!-- Meta Pixel Code -->
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google tag (gtag.js) -->
+    <!-- End Google tag (gtag.js) -->
+
+    <!-- Metricool tracker -->
+    <!-- End Metricool tracker -->
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>

@@ -1,0 +1,22 @@
+---
+import Autoria from './Autoria.astro';
+
+interface Props {
+  id: string;
+  classNameSeccion?: string;
+  classNameContainer?: string;
+}
+const { id, classNameSeccion, classNameContainer } = Astro.props;
+---
+
+<section
+  id={id}
+  class={`w-full flex flex-col justify-between ${classNameSeccion}`}
+>
+  <div
+    class={`h-full w-full max-w-[1440px] mx-auto grid place-items-center px-4 ${classNameContainer}`}
+  >
+    <slot />
+  </div>
+  {id === 'footer' ? <Autoria /> : ''}
+</section>
