@@ -2,17 +2,19 @@
 import { ClientRouter } from 'astro:transitions';
 
 // Importación de estilos globales, incluyendo Tailwind CSS
-import '../styles/global.css';
+import '@/styles/global.css';
 
 //importacion de imagenes
-import icono_metadata from '@/assets/astro.svg';
-import favicon from '@/assets/astro.svg';
+import icono_metadata from '@/assets/svg/logo_sin_fondo.svg';
+import favicon from '@/assets/svg/logo_sin_fondo.svg';
 
 //keywords
 const keywords = ['astro', 'framework', 'javascript'];
 
 //data para schema
 import dataSchema from '@/Data/seoSchema.json';
+import NavbarMovile from '@/components/navbar/Navbar_movile.astro';
+import NavbarWeb from '@/components/navbar/Navbar_web.astro';
 
 interface Props {
   title: string;
@@ -71,7 +73,7 @@ const schema = {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/favicon.svg"
+      href="/logos/logo_sin_fondo.svg"
     />
     <meta
       name="generator"
@@ -184,12 +186,21 @@ const schema = {
     <!-- Metricool tracker -->
     <!-- End Metricool tracker -->
   </head>
-  <body>
+  <body class="font-base bg-seasalt-100">
+    <NavbarMovile />
+    <NavbarWeb />
+
     <slot />
   </body>
 </html>
 
 <style>
+  :root {
+    interpolate-size: allow-keywords;
+    scroll-behavior: smooth;
+    transition-behavior: allow-discrete;
+  }
+
   body {
     margin: 0;
     padding: 0;

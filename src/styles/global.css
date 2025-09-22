@@ -1,116 +1,86 @@
 @import 'tailwindcss';
 
 @theme {
+  --font-base: 'Nunito', sans-serif;
+  --font-titulo: 'Arimo', sans-serif;
+
   /* Neutral */
   --color-neutral-100: #ffffff;
-  --color-neutral-200: #e6e6e6;
-  --color-neutral-300: #cccccc;
-  --color-neutral-400: #b3b3b3;
-  --color-neutral-500: #999999;
-  --color-neutral-600: #808080;
-  --color-neutral-700: #666666;
-  --color-neutral-800: #4d4d4d;
-  --color-neutral-900: #333333;
+  --color-neutral-200: #e8e8e8;
+  --color-neutral-300: #d2d2d2;
+  --color-neutral-400: #bbbbbb;
+  --color-neutral-500: #a4a4a4;
+  --color-neutral-600: #8e8e8e;
+  --color-neutral-700: #777777;
+  --color-neutral-800: #606060;
+  --color-neutral-900: #4a4a4a;
 
   /* Oxford Blue */
-  --color-oxford-blue-100: #a1b8ff;
-  --color-oxford-blue-200: #718dff;
-  --color-oxford-blue-300: #4162ff;
-  --color-oxford-blue-400: #1037ff;
-  --color-oxford-blue-500: #001247;
-  --color-oxford-blue-10: #f0f4ff;
-  --color-oxford-blue-50: #6f7a87;
+  --color-oxfordblue-100: #799bea;
+  --color-oxfordblue-200: #3669e0;
+  --color-oxfordblue-300: #1b47ad;
+  --color-oxfordblue-400: #102c6a;
+  --color-oxfordblue-500: #061027;
 
   /* Risd Blue */
-  --color-risd-blue-100: #a1caff;
-  --color-risd-blue-200: #71adff;
-  --color-risd-blue-300: #418fff;
-  --color-risd-blue-400: #1072ff;
-  --color-risd-blue-500: #0051d0;
-  --color-risd-blue-10: #f0f7ff;
-  --color-risd-blue-50: #92b7ff;
+  --color-risdblue-100: #b1c9ff;
+  --color-risdblue-200: #6494fe;
+  --color-risdblue-300: #165efe;
+  --color-risdblue-400: #0143d4;
+  --color-risdblue-500: #012f96;
 
   /* Turquoise */
-  --color-turquoise-100: #97f0da;
-  --color-turquoise-200: #62e8cd;
-  --color-turquoise-300: #2ae0c0;
-  --color-turquoise-400: #00d9b3;
-  --color-turquoise-500: #00a584;
-  --color-turquoise-10: #f0fffb;
-  --color-turquoise-50: #a2f0df;
+  --color-turquoise-100: #aff5e9;
+  --color-turquoise-200: #5fecd2;
+  --color-turquoise-300: #1ad6b4;
+  --color-turquoise-400: #14a68c;
+  --color-turquoise-500: #0e7664;
 
   /* Celeste */
-  --color-celeste-100: #a2f0e4;
-  --color-celeste-200: #62e8d7;
-  --color-celeste-300: #2ae0ca;
-  --color-celeste-400: #00d9bd;
-  --color-celeste-500: #00a593;
-  --color-celeste-10: #e6fffb;
-  --color-celeste-50: #a2f0ed;
+  --color-celeste-100: #c6f7ed;
+  --color-celeste-200: #89eeda;
+  --color-celeste-300: #4be6c6;
+  --color-celeste-400: #1dceaa;
+  --color-celeste-500: #149178;
 
   /* Black Olive */
-  --color-black-olive-100: #3a3a37;
+  --color-blackolive-100: #43413f;
 
   /* Seasalt */
-  --color-seasalt-100: #f9f9f9;
+  --color-seasalt-100: #f7f6f5;
 
   /* Timberwolf */
-  --color-timberwolf-100: #d8d7d2;
+  --color-timberwolf-100: #d5d2cf;
 }
 
-/* Arimo */
 @font-face {
   font-family: 'Arimo';
-  src: url('/fonts/Arimo-Regular.woff2') format('woff2');
-  font-weight: normal;
+  src: url('/fonts/Arimo-VariableFont_wght.woff2') format('woff2');
+  font-weight: 400 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Arimo';
-  src: url('/fonts/Arimo-Italic.woff2') format('woff2');
-  font-weight: normal;
+  src: url('/fonts/Arimo-Italic-VariableFont_wght.woff2') format('woff2');
+  font-weight: 400 700;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Arimo';
-  src: url('/fonts/Arimo-Medium.woff2') format('woff2');
-  font-weight: 500;
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito-VariableFont_wght.woff2') format('woff2');
+  font-weight: 200 1000;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Arimo';
-  src: url('/fonts/Arimo-MediumItalic.woff2') format('woff2');
-  font-weight: 500;
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito-Italic-VariableFont_wght.woff2') format('woff2');
+  font-weight: 200 1000;
   font-style: italic;
-}
-
-@font-face {
-  font-family: 'Arimo';
-  src: url('/fonts/Arimo-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Arimo';
-  src: url('/fonts/Arimo-SemiBoldItalic.woff2') format('woff2');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Arimo';
-  src: url('/fonts/Arimo-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Arimo';
-  src: url('/fonts/Arimo-BoldItalic.woff2') format('woff2');
-  font-weight: bold;
-  font-style: italic;
+  font-display: swap;
 }

@@ -1,10 +1,61 @@
 ---
 import Container from '@/components/base-components/Container.astro';
+import imgHero from '@/assets/mock/fondo_hero.avif';
+import logoCompleto from '@/assets/logos/logo_completo.avif';
+import marcoHero from '@/assets/svg/marco_hero.svg';
+import logoCompacto from '@/assets/svg/logo_compacto.svg';
 ---
 
-<Container id="hero">
-  <div class="w-full h-full flex items-end justify-center">
+<!-- <Container id="hero">
+  <div class="w-full h-full flex items-end justify-center bg-red-200">
     <h1>hola</h1>
     <p>Bienvenido a nuestra plataforma.</p>
   </div>
-</Container>
+</Container> -->
+<section
+  id="hero"
+  class="w-full h-dvh flex items-start lg:items-center justify-center text-blackolive-100 bg-no-repeat bg-right-bottom sm:bg-[right_-100px_bottom] lg:bg-[right_-60%_bottom] xl:bg-right-bottom bg-contain sm:bg-cover lg:bg-contain"
+  style={`background-image: url(${imgHero.src})`}
+>
+  <div class="flex h-full lg:h-auto flex-col mt-20 sm:mt-12">
+    <h1 class="w-full sm:w-[60%] lg:w-[75%] xl:w-[70%]">
+      <picture>
+        <source
+          srcset={logoCompacto.src}
+          type="image/svg+xml"
+          media="(min-width: 430px) and (max-width: 1023px)"
+          class="w-[30%] object-contain"
+        />
+        <img
+          src={logoCompleto.src}
+          alt="Planifica Mejor"
+          class="w-full h-full object-contain object-center"
+        />
+      </picture>
+    </h1>
+    <div
+      class="w-full sm:w-[70%] lg:w-[55%] text-center sm:text-left px-5 -mt-6 sm:mt-0 sm:ml-3 xl:ml-12"
+    >
+      <h2
+        class="font-titulo font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-wider leading-7 sm:leading-9 lg:leading-12 xl:leading-14"
+      >
+        Lorem ipsum dolor, sit amet <span
+          class="italic relative before:absolute before:bottom-0 before:h-[15px] sm:before:h-[18px] lg:before:h-[24px] xl:before:h-[30px] before:bg-turquoise-300 before:w-full before:-skew-x-12"
+          >consectetur</span
+        >
+      </h2>
+      <p class="text-sm sm:text-base lg:text-lg tracking-wider pt-4 text-oxfordblue-400">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, corrupti consectetur
+        dolorem commodi sit ratione amet! Magni earum, adipisci illum delectus facilis
+        necessitatibus facere praesentium repellat soluta voluptate placeat tenetur?
+      </p>
+    </div>
+  </div>
+  <!-- <div class="w-full h-full relative z-0">
+    <img
+      src={imgHero.src}
+      alt="Img de Cristian de Benedetto - Planifica Mejor"
+      class="w-full h-full object-cover object-right-top"
+    />
+  </div> -->
+</section>

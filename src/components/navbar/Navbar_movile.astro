@@ -1,0 +1,102 @@
+---
+import logo from '@/assets/svg/logo_sin_fondo.svg';
+---
+
+<nav class="fixed top-0 z-50 flex w-full items-start justify-center gap-4 pt-3 lg:hidden">
+  <details
+    class="custom-details bg-oxfordblue-500 w-[160px] flex-col items-center justify-between rounded-xl p-[6px] text-[14px] font-normal text-neutral-100 shadow-md"
+  >
+    <summary class="flex h-[53px] w-full items-center justify-center gap-3">
+      <a
+        href="/"
+        class="w-1/2 h-full flex items-center justify-center"
+        ><img
+          class="size-[50px]"
+          src={logo.src}
+          alt="Logo Panambi"
+        />
+      </a>
+      <span class="bg-turquoise-500 mx-[1px] h-3/4 w-[1px]"></span>
+      <span class="custom-marker w-1/2"
+        ><div class="relative h-full w-full text-center">
+          <p
+            class="menu__nav__button__line transform-3d relative h-full w-full transition-all duration-500"
+          >
+            Menu
+          </p>
+          <p
+            class="menu__nav__button__2nd__line__text transform-3d opacity-1 absolute left-0 top-full h-full w-full transition-all duration-500"
+          >
+            Cerrar
+          </p>
+        </div></span
+      >
+    </summary>
+    <div class="flex h-full flex-col items-center justify-evenly gap-4 py-4">
+      <a
+        class="cursor-pointer"
+        href="/#quiensoy"
+        >Quien soy
+      </a>
+      <a
+        class="cursor-pointer"
+        href="/#servicios"
+        >Servicios
+      </a>
+
+      <a
+        class="cursor-pointer"
+        href="/#contacto"
+        >Contacto
+      </a>
+    </div>
+  </details>
+  <div class="flex h-[65px] items-center justify-center">
+    <a
+      class="transform-3d group flex h-full cursor-pointer items-center justify-center rounded-lg bg-neutral-50 px-7 py-5 font-semibold text-neutral-900 shadow-md"
+      href="/contacto"
+    >
+      <p class="transform-3d">Agenda tu cita</p>
+    </a>
+  </div>
+</nav>
+
+<style>
+  details {
+    overflow: hidden;
+  }
+
+  details::details-content {
+    block-size: 0;
+    transition:
+      block-size 0.3s ease-in-out,
+      content-visibility 0.3s ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+
+  details[open]::details-content {
+    block-size: auto;
+  }
+
+  details summary {
+    list-style: none; /* oculta el ::marker original */
+    cursor: pointer;
+    list-style-position: outside;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none; /* oculta el ::marker en WebKit */
+  }
+
+  /* animación boton apertura */
+  .custom-details[open] .custom-marker .menu__nav__button__line {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  .custom-details[open] .custom-marker .menu__nav__button__2nd__line__text {
+    top: 0;
+    opacity: 1;
+  }
+</style>
+
+<script></script>
