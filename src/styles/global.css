@@ -1,1 +1,116 @@
 @import 'tailwindcss';
+
+@theme {
+  /* Neutral */
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #e6e6e6;
+  --color-neutral-300: #cccccc;
+  --color-neutral-400: #b3b3b3;
+  --color-neutral-500: #999999;
+  --color-neutral-600: #808080;
+  --color-neutral-700: #666666;
+  --color-neutral-800: #4d4d4d;
+  --color-neutral-900: #333333;
+
+  /* Oxford Blue */
+  --color-oxford-blue-100: #a1b8ff;
+  --color-oxford-blue-200: #718dff;
+  --color-oxford-blue-300: #4162ff;
+  --color-oxford-blue-400: #1037ff;
+  --color-oxford-blue-500: #001247;
+  --color-oxford-blue-10: #f0f4ff;
+  --color-oxford-blue-50: #6f7a87;
+
+  /* Risd Blue */
+  --color-risd-blue-100: #a1caff;
+  --color-risd-blue-200: #71adff;
+  --color-risd-blue-300: #418fff;
+  --color-risd-blue-400: #1072ff;
+  --color-risd-blue-500: #0051d0;
+  --color-risd-blue-10: #f0f7ff;
+  --color-risd-blue-50: #92b7ff;
+
+  /* Turquoise */
+  --color-turquoise-100: #97f0da;
+  --color-turquoise-200: #62e8cd;
+  --color-turquoise-300: #2ae0c0;
+  --color-turquoise-400: #00d9b3;
+  --color-turquoise-500: #00a584;
+  --color-turquoise-10: #f0fffb;
+  --color-turquoise-50: #a2f0df;
+
+  /* Celeste */
+  --color-celeste-100: #a2f0e4;
+  --color-celeste-200: #62e8d7;
+  --color-celeste-300: #2ae0ca;
+  --color-celeste-400: #00d9bd;
+  --color-celeste-500: #00a593;
+  --color-celeste-10: #e6fffb;
+  --color-celeste-50: #a2f0ed;
+
+  /* Black Olive */
+  --color-black-olive-100: #3a3a37;
+
+  /* Seasalt */
+  --color-seasalt-100: #f9f9f9;
+
+  /* Timberwolf */
+  --color-timberwolf-100: #d8d7d2;
+}
+
+/* Arimo */
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arimo';
+  src: url('/fonts/Arimo-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
