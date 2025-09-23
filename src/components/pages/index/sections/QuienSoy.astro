@@ -1,0 +1,16 @@
+---
+import Container from "@/components/base-components/Container.astro";
+import imgQuienSoy from "@/assets/mock/hero_mock.png";
+
+
+---
+
+<Container id="quien_soy">
+    <div class="w-full h-[600px] flex items-center justify-center  p">
+        <div class=" h-full aspect-square rounded-br-full rounded-t-full   bg-oxfordblue-500/60 relative ">
+            <img src={imgQuienSoy.src} alt="" class="w-full h-full object-cover object-bottom aspect-square rounded-br-full rounded-t-full overflow-hidden">
+            <div class="absolute bottom-2 right-2 h-full aspect-square rounded-br-full rounded-t-full border-[3px] border-turquoise-200"></div>
+        </div>
+        <div class="flex-1"></div>
+    </div>
+</Container>

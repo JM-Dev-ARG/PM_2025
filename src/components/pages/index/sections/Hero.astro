@@ -34,15 +34,16 @@ import logoCompacto from '@/assets/svg/logo_compacto.svg';
       </picture>
     </h1>
     <div
-      class="w-full sm:w-[70%] lg:w-[55%] text-center sm:text-left px-5 -mt-6 sm:mt-0 sm:ml-3 xl:ml-12"
+      class="w-full sm:w-[70%] lg:w-[55%] text-center sm:text-left px-5 -mt-6 sm:mt-0 sm:ml-3 xl:ml-12 "
     >
       <h2
-        class="font-titulo font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-wider leading-7 sm:leading-9 lg:leading-12 xl:leading-14"
+        class="font-titulo font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-wider leading-7 sm:leading-9 lg:leading-12 xl:leading-14 "
       >
-        Lorem ipsum dolor, sit amet <span
-          class="italic relative before:absolute before:bottom-0 before:h-[15px] sm:before:h-[18px] lg:before:h-[24px] xl:before:h-[30px] before:bg-turquoise-300 before:w-full before:-skew-x-12"
-          >consectetur</span
-        >
+        Lorem ipsum dolor, sit amet 
+        <span
+          class="subrayado italic relative bg-amber-100 "
+          >consectetur<span class="absolute -left-2 bottom-0 h-[15px] sm:h-[18px] lg:h-[24px] xl:h-[30px] w-full bg-turquoise-300 -skew-x-[25deg] -z-10 ">
+          </span></span>
       </h2>
       <p class="text-sm sm:text-base lg:text-lg tracking-wider pt-4 text-oxfordblue-400">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, corrupti consectetur
@@ -59,3 +60,12 @@ import logoCompacto from '@/assets/svg/logo_compacto.svg';
     />
   </div> -->
 </section>
+
+<script>
+document.addEventListener('astro:page-load', () => {
+  const subrayado = document.querySelector('.subrayado') as HTMLElement
+  const cantidadLetras = subrayado.textContent.length
+  console.log(cantidadLetras)
+  subrayado.classList.add(`w-[calc(${cantidadLetras}ch + 10px)]`)
+})
+</script>
