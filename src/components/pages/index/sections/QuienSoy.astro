@@ -2,54 +2,58 @@
 import Container from '@/components/base-components/Container.astro';
 import imgQuienSoy from '@/assets/mock/hero_mock.png';
 import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
+import CardHitos from '@/components/base-components/CardHitos.astro';
+---
+
 ---
 
 <Container id="quien_soy">
-  <div class="w-full h-[600px] flex items-center justify-center relative gap-6 px-3">
-    <img
-      src={imgFondo.src}
-      alt=""
-      class="w-full h-full object-contain absolute opacity-[8%]"
-    />
-    <div class="h-full aspect-square rounded-br-full rounded-t-full bg-[#676c79] relative">
-      <img
-        src={imgQuienSoy.src}
-        alt=""
-        class="w-full h-full object-cover object-bottom aspect-square rounded-br-full rounded-t-full overflow-hidden"
-      />
-      <div
-        class="absolute bottom-2 right-2 h-full aspect-square rounded-br-full rounded-t-full border-[4px] border-turquoise-200"
-      >
+  <div class="relative flex h-auto w-full flex-col items-center justify-center gap-12 px-3">
+    <div class="flex h-auto w-full items-center justify-center gap-6">
+      <img src={imgFondo.src} alt="" class="absolute h-full w-full object-contain opacity-[8%]" />
+      <div class="relative aspect-square w-[40%] rounded-t-full rounded-br-full bg-[#676c79]">
+        <img
+          src={imgQuienSoy.src}
+          alt=""
+          class="aspect-square h-full w-full overflow-hidden rounded-t-full rounded-br-full object-cover object-bottom"
+        />
+        <div
+          class="absolute right-2 bottom-2 aspect-square h-full rounded-t-full rounded-br-full border-[4px] border-turquoise-200"
+        >
+        </div>
+      </div>
+      <div class="flex flex-1 flex-col items-center justify-start gap-3 text-pretty">
+        <p class="font-semibold text-risdblue-400 lg:text-3xl xl:text-4xl">
+          Soy Cristian De Benedetto y voy a ser tu Planificador Financiero.
+        </p>
+        <div
+          class="flex flex-col items-start justify-center gap-1 font-light text-blackolive-100 lg:text-base xl:text-2xl"
+        >
+          <p>
+            Mi meta es lograr que más personas y empresas cumplan sus objetivos
+            financieros utilizando planificaciones confiables y transparentes.
+          </p>
+          <p>
+            Cuento con las habilidades y los instrumentos para diseñar una estrategia a medida que
+            te permita ahorrar, invertir y crecer sostenidamente para alcanzar todas las metas que
+            te propongas.
+          </p>
+          <p>
+            Futbolista retirado, Licenciado en Periodismo y apasionado por las finanzas, me recibí
+            de Producto Asesor de Seguros en el año 2019 y desde ese momento me convertí en un
+            asesor todo terreno!
+          </p>
+          <p>
+            He ganado muchos premios y calificaciones internacionales por mi trabajo en
+            planificación y finanzas personales. Sin embargo, mi mayor logro es ver a mis asegurados
+            felices alcanzando su ¡Salud e Independencia financiera!
+          </p>
+          <p>¿Vos también podes ser uno de ellos, comenzamos hoy?</p>
+        </div>
       </div>
     </div>
-    <div class="flex-1 flex flex-col items-center justify-start gap-3 text-pretty">
-      <p class="text-4xl font-semibold text-risdblue-400">
-        Soy Cristian De Benedetto y voy a ser tu Planificador Financiero.
-      </p>
-      <div
-        class="flex flex-col items-start justify-center gap-2 text-2xl font-light text-blackolive-100"
-      >
-        <p>
-          Mi meta es lograr que más personas y empresas cumplan sus objetivos financieros utilizando
-          planificaciones confiables y transparentes.
-        </p>
-        <p>
-          Cuento con las habilidades y los instrumentos para diseñar una estrategia a medida que te
-          permita ahorrar, invertir y crecer sostenidamente para alcanzar todas las metas que te
-          propongas.
-        </p>
-        <p>
-          Futbolista retirado, Licenciado en Periodismo y apasionado por las finanzas, me recibí
-          de Producto Asesor de Seguros en el año 2019 y desde ese momento me convertí en un asesor
-          todo terreno!
-        </p>
-        <p>
-          He ganado muchos premios y calificaciones internacionales por mi trabajo en planificación
-          y finanzas personales. Sin embargo, mi mayor logro es ver a mis asegurados felices
-          alcanzando su ¡Salud e Independencia financiera!
-        </p>
-        <p>¿Vos también podes ser uno de ellos, comenzamos hoy?</p>
-      </div>
+    <div>
+      <CardHitos />
     </div>
   </div>
 </Container>

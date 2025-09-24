@@ -1,30 +1,30 @@
 {
-    "logo": "https://example.com/logos/logo_empresa.svg",
-    "contactPoint": {
-        "telephone": "+....",
-        "areaServed": "AR",
-        "availableLanguage": "Spanish"
-    },
-    "publisher": {
-        "name": "Ice-Dev para Consultora Panambi",
-        "url": "https://panambi.net/",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://example.com/logos/logo_panambi.svg"
-        }
-    },
-    "sameAs": [
-        "https://www.instagram.com/....",
-        "https://www.linkedin.com/in/..../",
-        "https://www.facebook.com/...",
-        "https://www.youtube.com/...."
-    ],
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "domicilio",
-        "addressLocality": "localidad",
-        "addressRegion": "provincia",
-        "postalCode": "cp",
-        "addressCountry": "Argentina"
+  "logo": "https://example.com/logos/logo_empresa.svg",
+  "contactPoint": {
+    "telephone": "+....",
+    "areaServed": "AR",
+    "availableLanguage": "Spanish"
+  },
+  "publisher": {
+    "name": "Ice-Dev para Consultora Panambi",
+    "url": "https://panambi.net/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.com/logos/logo_panambi.svg"
     }
+  },
+  "sameAs": [
+    "https://www.instagram.com/....",
+    "https://www.linkedin.com/in/..../",
+    "https://www.facebook.com/...",
+    "https://www.youtube.com/...."
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "domicilio",
+    "addressLocality": "localidad",
+    "addressRegion": "provincia",
+    "postalCode": "cp",
+    "addressCountry": "Argentina"
+  }
 }

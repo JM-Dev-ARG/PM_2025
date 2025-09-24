@@ -4,27 +4,21 @@ import logo from '@/assets/svg/logo_sin_fondo.svg';
 
 <nav class="top-0 z-50 mx-auto hidden w-full place-items-center gap-3 pt-2 md:fixed lg:grid">
   <div
-    class="bg-oxfordblue-500/85 flex h-[55px] w-[30%] min-w-[470px] items-center justify-between rounded-xl p-[6px] text-[14px] font-normal text-neutral-100 2xl:h-[75px] 2xl:text-[16px]"
+    class="flex h-[55px] w-[30%] min-w-[470px] items-center justify-between rounded-xl bg-oxfordblue-500/85 p-[6px] text-[14px] font-normal text-neutral-100 2xl:h-[75px] 2xl:text-[16px]"
   >
-    <a
-      href="/"
-      class="size-[48px] 2xl:size-[67px]"
-    >
-      <img
-        src={logo.src}
-        alt="Logo Planifica Mejor"
-      />
+    <a href="/" class="size-[48px] 2xl:size-[67px]">
+      <img src={logo.src} alt="Logo Planifica Mejor" />
     </a>
     <div class="flex h-full flex-1 items-center justify-evenly">
       <a
-        class="cursor-pointer text-center hover:text-turquoise-300 transition-all duration-200 relative before:absolute before:-bottom-0.5 before:h-[2px] before:w-0 before:bg-turquoise-300 before:transition-all before:duration-500 hover:before:w-full"
+        class="relative cursor-pointer text-center transition-all duration-200 before:absolute before:-bottom-0.5 before:h-[2px] before:w-0 before:bg-turquoise-300 before:transition-all before:duration-500 hover:text-turquoise-300 hover:before:w-full"
         href="/#quien_soy"
         data-target="quien_soy"
       >
         Quien soy
       </a>
       <a
-        class="cursor-pointer text-center hover:text-turquoise-300 transition-all duration-200 relative before:absolute before:-bottom-0.5 before:h-[2px] before:w-0 before:bg-turquoise-300 before:transition-all before:duration-500 hover:before:w-full"
+        class="relative cursor-pointer text-center transition-all duration-200 before:absolute before:-bottom-0.5 before:h-[2px] before:w-0 before:bg-turquoise-300 before:transition-all before:duration-500 hover:text-turquoise-300 hover:before:w-full"
         href="/#servicios"
         data-target="servicios"
       >
@@ -32,7 +26,7 @@ import logo from '@/assets/svg/logo_sin_fondo.svg';
       </a>
 
       <a
-        class="cursor-pointer text-center hover:text-turquoise-300 transition-all duration-200 relative before:absolute before:-bottom-0.5 before:h-[2px] before:w-0 before:bg-turquoise-300 before:transition-all before:duration-500 hover:before:w-full"
+        class="relative cursor-pointer text-center transition-all duration-200 before:absolute before:-bottom-0.5 before:h-[2px] before:w-0 before:bg-turquoise-300 before:transition-all before:duration-500 hover:text-turquoise-300 hover:before:w-full"
         href="/#contacto"
         data-target="contacto"
       >

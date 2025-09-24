@@ -66,115 +66,44 @@ const schema = {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/logos/logo_sin_fondo.svg"
-    />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logos/logo_sin_fondo.svg" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <meta
-      name="description"
-      content={description}
-    />
+    <meta name="description" content={description} />
 
-    <link
-      rel="canonical"
-      href={canonicalURL.href}
-    />
+    <link rel="canonical" href={canonicalURL.href} />
 
-    <meta
-      name="keywords"
-      content={keywords.join(', ')}
-    />
+    <meta name="keywords" content={keywords.join(', ')} />
 
-    <meta
-      name="robots"
-      content="index, follow"
-    />
-    <meta
-      name="author"
-      content="Ice-Dev para Panambi"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href={favicon.src}
-    />
-    <link
-      rel="apple-touch-icon"
-      href={favicon.src}
-    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Ice-Dev para Panambi" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={favicon.src} />
+    <link rel="apple-touch-icon" href={favicon.src} />
 
     <ClientRouter />
 
     <!-- Schema.org markup for Google -->
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(schema)}
-    />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <!-- End Schema.org markup for Google -->
 
     <!-- Facebook Meta Tags -->
-    <meta
-      property="og:url"
-      content={canonicalURL.href}
-    />
-    <meta
-      property="og:type"
-      content="website"
-    />
-    <meta
-      property="og:title"
-      content={title + ' - Inicio'}
-    />
-    <meta
-      property="og:description"
-      content={description}
-    />
-    <meta
-      property="og:image"
-      content={icono_metadata.src}
-    />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title + ' - Inicio'} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={icono_metadata.src} />
     <!-- End Facebook Meta Tags -->
 
     <!-- Twitter Meta Tags -->
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
-    <meta
-      property="twitter:domain"
-      content={canonicalURL.hostname}
-    />
-    <meta
-      property="twitter:url"
-      content={canonicalURL.href}
-    />
-    <meta
-      name="twitter:title"
-      content={title + ' - Inicio'}
-    />
-    <meta
-      name="twitter:description"
-      content={description}
-    />
-    <meta
-      name="twitter:image"
-      content={icono_metadata.src}
-    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content={canonicalURL.hostname} />
+    <meta property="twitter:url" content={canonicalURL.href} />
+    <meta name="twitter:title" content={title + ' - Inicio'} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={icono_metadata.src} />
     <!-- End Twitter Meta Tags -->
 
     <!-- Meta Pixel Code -->
@@ -186,7 +115,7 @@ const schema = {
     <!-- Metricool tracker -->
     <!-- End Metricool tracker -->
   </head>
-  <body class="font-base bg-seasalt-100">
+  <body class="bg-seasalt-100 font-base">
     <NavbarMovile />
     <NavbarWeb />
 
