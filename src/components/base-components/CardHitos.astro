@@ -1,21 +1,79 @@
 ---
-
+import border from '@/assets/svg/test.svg';
+interface Props {
+  delay?: number;
+}
+const { delay } = Astro.props;
 ---
 
-<div class="relative flex w-[200px] flex-col items-center justify-center gap-6 px-3">
+<div
+  class="card-hito relative flex w-[200px] flex-col items-center justify-center gap-6 px-3"
+  data-delay="1"
+>
   <div
-    class="relative mx-auto grid aspect-square h-[100px] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-300"
+    class="relative mx-auto grid aspect-square w-[80%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500"
   >
-    <p>1980</p>
-    <div
-      class="absolute right-1 bottom-1 aspect-square h-full rounded-t-full rounded-br-full border-[2px] border-turquoise-200"
-    >
+    <p class="text-3xl font-semibold text-seasalt-100">1980</p>
+    <div class="absolute right-1 bottom-1 aspect-square h-full">
+      <svg
+        width="94"
+        height="94"
+        viewBox="0 0 94 94"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-full w-full"
+      >
+        <path
+          d="M46.9131 1C72.2702 1 92.8262 21.5569 92.8262 46.9141C92.8262 72.2722 72.2693 92.8301 46.9111 92.8301H1V46.9131C1.00005 21.556 21.556 1.00006 46.9131 1Z"
+          stroke="#1AD6B4"
+          stroke-width="2"
+          class="svg-elem-1"></path>
+      </svg>
     </div>
   </div>
-  <div>
-    <p class="text-center text-2xl font-semibold">lorem ipsum dolor si amet</p>
-    <p class="text-center text-xl font-light">
+  <div class="flex flex-col items-center justify-center gap-1">
+    <p class="w-[70%] text-center font-semibold text-pretty lg:text-xl xl:text-2xl">
+      lorem ipsum dolor si amet</p
+    >
+    <p class="text-center font-light text-pretty lg:text-lg xl:text-xl">
       Lorem ipsum dolor sit amet consectetur. Mollis in in blandit mattis. Rhoncus quam tempus cras
     </p>
   </div>
 </div>
+
+<style>
+  @keyframes animate-svg-stroke-1 {
+    0% {
+      stroke-dashoffset: 310.2232666015625px;
+      stroke-dasharray: 100.2232666015625px;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+      stroke-dasharray: 310.2232666015625px;
+    }
+  }
+
+  .svg-elem-1 {
+    animation: animate-svg-stroke-1 1.8s linear 0s both;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const cardHitos = document.querySelector('.card-hito') as HTMLElement;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const delay = entry.target.getAttribute('data-delay');
+        console.log(delay);
+        observer.unobserve(entry.target);
+        /* if (entry.isIntersecting) {
+       const delay = entry.target.getAttribute('data-delay');
+       entry.target.style.animationDelay = `${delay}s`;
+       interceptor.unobserve(entry.target);
+     } */
+      });
+    });
+    observer.observe(cardHitos);
+  });
+</script>
