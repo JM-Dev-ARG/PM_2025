@@ -1,19 +1,17 @@
 ---
-import border from '@/assets/svg/test.svg';
 interface Props {
-  delay?: number;
+  fecha: string;
+  titulo: string;
+  descripcion: string;
 }
-const { delay } = Astro.props;
+const { fecha, titulo, descripcion } = Astro.props;
 ---
 
-<div
-  class="card-hito relative flex w-[200px] flex-col items-center justify-center gap-6 px-3"
-  data-delay="1"
->
+<div class="relative flex w-[200px] flex-col items-center justify-center gap-6 px-3">
   <div
-    class="relative mx-auto grid aspect-square w-[80%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500"
+    class="hito-esfera relative mx-auto grid aspect-square w-[80%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500"
   >
-    <p class="text-3xl font-semibold text-seasalt-100">1980</p>
+    <p class="text-3xl font-semibold text-seasalt-100">{fecha}</p>
     <div class="absolute right-1 bottom-1 aspect-square h-full">
       <svg
         width="94"
@@ -21,22 +19,21 @@ const { delay } = Astro.props;
         viewBox="0 0 94 94"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="h-full w-full"
+        class="svg h-full w-full"
       >
         <path
+          class="svg-path"
           d="M46.9131 1C72.2702 1 92.8262 21.5569 92.8262 46.9141C92.8262 72.2722 72.2693 92.8301 46.9111 92.8301H1V46.9131C1.00005 21.556 21.556 1.00006 46.9131 1Z"
           stroke="#1AD6B4"
-          stroke-width="2"
-          class="svg-elem-1"></path>
+          stroke-width="2"></path>
       </svg>
     </div>
   </div>
+
   <div class="flex flex-col items-center justify-center gap-1">
-    <p class="w-[70%] text-center font-semibold text-pretty lg:text-xl xl:text-2xl">
-      lorem ipsum dolor si amet</p
-    >
+    <p class="w-[70%] text-center font-semibold text-pretty lg:text-xl xl:text-2xl"> {titulo}</p>
     <p class="text-center font-light text-pretty lg:text-lg xl:text-xl">
-      Lorem ipsum dolor sit amet consectetur. Mollis in in blandit mattis. Rhoncus quam tempus cras
+      {descripcion}
     </p>
   </div>
 </div>
@@ -45,35 +42,42 @@ const { delay } = Astro.props;
   @keyframes animate-svg-stroke-1 {
     0% {
       stroke-dashoffset: 310.2232666015625px;
-      stroke-dasharray: 100.2232666015625px;
+      stroke-dasharray: 310.2232666015625px;
     }
-
     100% {
       stroke-dashoffset: 0;
       stroke-dasharray: 310.2232666015625px;
     }
   }
 
-  .svg-elem-1 {
-    animation: animate-svg-stroke-1 1.8s linear 0s both;
+  .svg-path.svg-animation {
+    animation: animate-svg-stroke-1 0.8s linear var(--delay, 0s) both;
+  }
+
+  /* Línea que conecta al siguiente hito */
+  .hito-esfera::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* centrada verticalmente respecto al círculo */
+    left: calc(100% + 10px); /* empieza justo al final del círculo */
+    height: 4px; /* grosor de la línea */
+    width: calc(var(--line-width) - 24px); /* ancho hasta el siguiente círculo */
+    background: #1ad6b4;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  /* animación de la línea */
+  .hito-esfera.linea-animada::after {
+    animation: grow-line 0.5s linear forwards;
+  }
+
+  @keyframes grow-line {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
   }
 </style>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const cardHitos = document.querySelector('.card-hito') as HTMLElement;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const delay = entry.target.getAttribute('data-delay');
-        console.log(delay);
-        observer.unobserve(entry.target);
-        /* if (entry.isIntersecting) {
-       const delay = entry.target.getAttribute('data-delay');
-       entry.target.style.animationDelay = `${delay}s`;
-       interceptor.unobserve(entry.target);
-     } */
-      });
-    });
-    observer.observe(cardHitos);
-  });
-</script>
