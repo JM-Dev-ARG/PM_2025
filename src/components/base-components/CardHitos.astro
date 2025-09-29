@@ -7,11 +7,11 @@ interface Props {
 const { fecha, titulo, descripcion } = Astro.props;
 ---
 
-<div class="relative flex w-[200px] flex-col items-center justify-center gap-6 px-3">
+<div class="relative flex w-full items-center justify-center gap-6 px-3 lg:w-[200px] lg:flex-col">
   <div
-    class="hito-esfera relative mx-auto grid aspect-square w-[80%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500"
+    class="hito-esfera relative mx-auto grid aspect-square w-[30%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500 sm:w-[20%] lg:w-[80%]"
   >
-    <p class="text-3xl font-semibold text-seasalt-100">{fecha}</p>
+    <p class="text-xl font-semibold text-seasalt-100 lg:text-3xl">{fecha}</p>
     <div class="absolute right-1 bottom-1 aspect-square h-full">
       <svg
         width="94"
@@ -30,9 +30,13 @@ const { fecha, titulo, descripcion } = Astro.props;
     </div>
   </div>
 
-  <div class="flex flex-col items-center justify-center gap-1">
-    <p class="w-[70%] text-center font-semibold text-pretty lg:text-xl xl:text-2xl"> {titulo}</p>
-    <p class="text-center font-light text-pretty lg:text-lg xl:text-xl">
+  <div class="flex flex-1 items-center justify-center gap-6 lg:flex-col lg:gap-1">
+    <p
+      class="w-[35%] text-center text-xl font-semibold text-pretty sm:w-[20%] lg:w-full xl:text-2xl"
+    >
+      {titulo}</p
+    >
+    <p class="flex-1 text-left font-light text-pretty lg:text-lg xl:text-xl">
       {descripcion}
     </p>
   </div>
@@ -54,30 +58,61 @@ const { fecha, titulo, descripcion } = Astro.props;
     animation: animate-svg-stroke-1 0.8s linear var(--delay, 0s) both;
   }
 
-  /* Línea que conecta al siguiente hito */
+  /* ===== LÍNEA POR DEFECTO (flex-col → VERTICAL, mobile) ===== */
   .hito-esfera::after {
     content: '';
     position: absolute;
-    top: 50%; /* centrada verticalmente respecto al círculo */
-    left: calc(100% + 10px); /* empieza justo al final del círculo */
-    height: 4px; /* grosor de la línea */
-    width: calc(var(--line-width) - 24px); /* ancho hasta el siguiente círculo */
+    top: calc(100% + 10px); /* debajo del círculo */
+    left: 50%; /* centrada horizontalmente */
+    width: 4px; /* grosor de la línea */
+    height: var(--line-height, 100px); /* altura hasta el siguiente */
     background: #1ad6b4;
-    transform: scaleX(0);
-    transform-origin: left;
+    transform: scaleY(0);
+    transform-origin: top; /* crece de arriba hacia abajo */
+    animation-delay: var(--delay-linea, 0s);
   }
 
-  /* animación de la línea */
   .hito-esfera.linea-animada::after {
-    animation: grow-line 0.5s linear forwards;
+    animation: grow-line-vertical 0.5s linear var(--delay-linea, 0s) forwards;
   }
 
-  @keyframes grow-line {
+  @keyframes grow-line-vertical {
     0% {
-      transform: scaleX(0);
+      transform: scaleY(0);
     }
     100% {
-      transform: scaleX(1);
+      transform: scaleY(1);
+    }
+  }
+
+  @media (min-width: 600px) {
+    .hito-esfera::after {
+      height: calc(var(--line-height, 100px) - var(--gap-md, 4.5rem));
+    }
+  }
+
+  /* ===== LÍNEA EN HORIZONTAL (lg:flex-row → desktop) ===== */
+  @media (min-width: 1024px) {
+    .hito-esfera::after {
+      top: 50%; /* centrada verticalmente */
+      left: calc(100% + 10px); /* a la derecha del círculo */
+      height: 4px;
+      width: calc(var(--line-width, 100px) - var(--gap-lg, 24px));
+      transform: scaleX(0);
+      transform-origin: left; /* crece de izquierda a derecha */
+    }
+
+    .hito-esfera.linea-animada::after {
+      animation: grow-line-horizontal 0.5s linear var(--delay-linea, 0s) forwards;
+    }
+
+    @keyframes grow-line-horizontal {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
     }
   }
 </style>

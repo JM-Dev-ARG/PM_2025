@@ -4,13 +4,20 @@ import imgQuienSoy from '@/assets/mock/hero_mock.png';
 import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
 import CardHitos from '@/components/base-components/CardHitos.astro';
 import ContainerHitos from '@/components/base-components/ContainerHitos.astro';
+import Premios from '@/components/base-components/Premios.astro';
 ---
 
 <Container id="quien_soy">
-  <div class="relative flex h-auto w-full flex-col items-center justify-center gap-12 px-3">
-    <div class="flex h-auto w-full items-center justify-center gap-6">
-      <img src={imgFondo.src} alt="" class="absolute h-full w-full object-contain opacity-[8%]" />
-      <div class="relative aspect-square w-[40%] rounded-t-full rounded-br-full bg-[#676c79]">
+  <div class="relative flex h-auto w-full flex-col items-center justify-center gap-16 px-3">
+    <div class="flex h-auto w-full flex-col items-center justify-center gap-6 sm:flex-row">
+      <img
+        src={imgFondo.src}
+        alt=""
+        class="absolute top-1/2 left-1/2 -z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 object-contain object-center opacity-[8%]"
+      />
+      <div
+        class="relative aspect-square w-[80%] rounded-t-full rounded-br-full bg-[#676c79] sm:w-[40%]"
+      >
         <img
           src={imgQuienSoy.src}
           alt=""
@@ -22,7 +29,7 @@ import ContainerHitos from '@/components/base-components/ContainerHitos.astro';
         </div>
       </div>
       <div class="flex flex-1 flex-col items-center justify-start gap-3 text-pretty">
-        <p class="font-semibold text-risdblue-400 lg:text-3xl xl:text-4xl">
+        <p class="text-2xl font-semibold text-risdblue-400 lg:text-3xl xl:text-4xl">
           Soy Cristian De Benedetto y voy a ser tu Planificador Financiero.
         </p>
         <div
@@ -55,5 +62,6 @@ import ContainerHitos from '@/components/base-components/ContainerHitos.astro';
       <CardHitos />
     </div>> -->
     <ContainerHitos />
+    <Premios />
   </div>
 </Container>

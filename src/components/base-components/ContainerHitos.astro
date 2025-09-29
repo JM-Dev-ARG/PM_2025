@@ -3,37 +3,13 @@ import data from '@/data/hitos.json';
 import CardHitos from './CardHitos.astro';
 ---
 
-<div class="flex w-full items-center justify-between gap-6">
+<div
+  class="flex w-full flex-col items-center justify-between gap-16 sm:w-[80%] lg:w-[80%] lg:flex-row lg:gap-6"
+  style="--gap: 0rem; --gap-md: 4.5rem; --gap-lg: 1.5rem;"
+>
   {data.map((hito) => <CardHitos {...hito} />)}
 </div>
 
-<!-- <script>
-  document.addEventListener('astro:page-load', () => {
-    const paths = document.querySelectorAll('.svg-path');
-    const esferas = document.querySelectorAll('.hito-esfera');
-    if (!paths.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const path = entry.target;
-            const index = Array.from(paths).indexOf(path);
-            const delay = index * 0.8;
-            path.style.setProperty('--delay', `${delay}s`);
-
-            path.classList.add('svg-animation');
-
-            observer.unobserve(path);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    paths.forEach((path: any) => observer.observe(path));
-  });
-</script> -->
 <script>
   document.addEventListener('astro:page-load', () => {
     const esferas = document.querySelectorAll('.hito-esfera');
@@ -49,6 +25,7 @@ import CardHitos from './CardHitos.astro';
             const index = Array.from(paths).indexOf(path);
 
             const delay = index * 1.3;
+            const delayLinea = (delay + 0.8) * 1;
             /* @ts-ignore */
             path.style.setProperty('--delay', `${delay}s`);
             path.classList.add('svg-animation');
@@ -59,9 +36,17 @@ import CardHitos from './CardHitos.astro';
               const siguiente = esferas[index + 1];
               const rect1 = esferas[index].getBoundingClientRect();
               const rect2 = siguiente.getBoundingClientRect();
+
               const distance = rect2.left - rect1.right;
+              const distance2 = rect1.right - rect2.left;
+
               /* @ts-ignore */
               esferas[index].style.setProperty('--line-width', distance + 'px');
+              /* @ts-ignore */
+              esferas[index].style.setProperty('--line-height', distance2 + 'px');
+
+              /* @ts-ignore */
+              esferas[index].style.setProperty('--delay-linea', `${delayLinea}s`);
 
               esferas[index].classList.add('linea-animada');
             }
