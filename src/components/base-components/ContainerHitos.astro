@@ -51,7 +51,7 @@ import CardHitos from './CardHitos.astro';
               esferas[index].classList.add('linea-animada');
             }
 
-            observer.unobserve(path);
+            observer.unobserve(entry.target);
           }
         });
       },

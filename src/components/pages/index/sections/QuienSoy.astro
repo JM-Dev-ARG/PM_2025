@@ -5,10 +5,11 @@ import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
 import CardHitos from '@/components/base-components/CardHitos.astro';
 import ContainerHitos from '@/components/base-components/ContainerHitos.astro';
 import Premios from '@/components/base-components/Premios.astro';
+import Numeros from '@/components/base-components/Numeros.astro';
 ---
 
 <Container id="quien_soy">
-  <div class="relative flex h-auto w-full flex-col items-center justify-center gap-16 px-3">
+  <div class="relative flex h-auto w-full flex-col items-center justify-center gap-20 px-3">
     <div class="flex h-auto w-full flex-col items-center justify-center gap-6 sm:flex-row">
       <img
         src={imgFondo.src}
@@ -63,5 +64,6 @@ import Premios from '@/components/base-components/Premios.astro';
     </div>> -->
     <ContainerHitos />
     <Premios />
+    <Numeros />
   </div>
 </Container>

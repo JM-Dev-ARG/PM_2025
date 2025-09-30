@@ -1,0 +1,98 @@
+---
+import dataNumeros from '@/data/numeros.json';
+---
+
+<div
+  class="counter-section grid w-full grid-cols-1 place-items-start gap-8 text-center sm:grid-cols-3 xl:w-[80%]"
+>
+  {
+    dataNumeros.map((item) => {
+      const palabras = item.titulo.split(' ');
+      const ultima = palabras.pop();
+      const inicio = palabras.join(' ');
+
+      return (
+        <div class="flex w-full flex-col items-center justify-center gap-5">
+          <p
+            class={`texto-borde ${item.value ? 'value2' : 'value'} bg-risdblue-300 px-2 text-center font-titulo text-[100px] leading-[90px] font-black tracking-wider text-seasalt-100 lg:text-[120px] lg:leading-[100px]`}
+            aria-label={item.label}
+          >
+            0
+          </p>
+          <p class="relative max-w-[150px] text-center text-3xl font-extrabold sm:max-w-[200px] lg:max-w-[220px] lg:text-4xl xl:max-w-[300px] xl:text-5xl">
+            {inicio}{' '}
+            <span class="relative inline-block">
+              {ultima}
+              <span class="absolute bottom-0 -left-1.5 -z-10 h-[calc(100%/2)] w-[calc(100%+0.5rem)] -skew-x-[45deg] bg-turquoise-200" />
+            </span>
+          </p>
+        </div>
+      );
+    })
+  }
+</div>
+
+<style>
+  .texto-borde {
+    background-clip: text;
+    -webkit-text-stroke: 0.115em transparent;
+    -moz-text-stroke: 0.115em transparent;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    function animateCounters() {
+      const counters = document.querySelectorAll('.value') as any;
+      const speed = 300;
+
+      counters.forEach((counter: any) => {
+        const animate = () => {
+          const value = +counter.getAttribute('aria-label');
+          const data = +counter.innerText;
+          const time = value / speed;
+          if (data < value) {
+            counter.innerText = Math.ceil(data + time);
+            setTimeout(animate, 1);
+          } else {
+            counter.innerText = value;
+          }
+        };
+        animate();
+      });
+
+      const counters2 = document.querySelectorAll('.value2') as any;
+      counters2.forEach((counter: any) => {
+        const animate = () => {
+          const value = +counter.getAttribute('aria-label');
+          const data = +counter.innerText;
+          const time = value / speed;
+          if (data < value) {
+            counter.innerText = Math.ceil(data + time);
+            setTimeout(animate, 150);
+          } else {
+            counter.innerText = value;
+          }
+        };
+        animate();
+      });
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    const section = document.querySelector('.counter-section');
+    if (section) observer.observe(section);
+  });
+</script>
