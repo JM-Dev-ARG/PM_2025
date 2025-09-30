@@ -4,6 +4,9 @@
   --font-base: 'Nunito', sans-serif;
   --font-titulo: 'Arimo', sans-serif;
 
+  /* Shadow */
+  --shadow-PM: 2px 2px 0px var(--color-turquoise-300);
+
   /* Neutral */
   --color-neutral-100: #ffffff;
   --color-neutral-200: #e8e8e8;
