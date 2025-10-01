@@ -7,11 +7,9 @@ interface Props {
 const { fecha, titulo, descripcion } = Astro.props;
 ---
 
-<div
-  class="relative flex w-full items-center justify-center gap-6 px-3 lg:w-[200px] lg:flex-col 2xl:w-[300px]"
->
+<div class="relative flex w-full flex-1 items-center justify-center gap-6 lg:flex-col">
   <div
-    class="hito-esfera relative mx-auto grid aspect-square w-[30%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500 sm:w-[20%] lg:w-[60%] xl:w-[60%]"
+    class="hito-esfera relative mx-auto grid aspect-square w-[30%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500 sm:w-[20%] lg:w-[60%] xl:w-[55%]"
   >
     <p class="text-xl font-semibold text-seasalt-100 lg:text-2xl 2xl:text-3xl">{fecha}</p>
     <div class="absolute right-1 bottom-1 aspect-square h-full">

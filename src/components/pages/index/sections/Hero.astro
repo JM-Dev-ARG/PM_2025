@@ -1,30 +1,36 @@
 ---
-import imgHero from '@/assets/mock/fondo_hero.avif';
-import logoCompleto from '@/assets/logos/logo_completo.avif';
 import logoCompacto from '@/assets/svg/logo_compacto.svg';
+import logoSolo from '@/assets/svg/logo_sin_fondo.svg';
+import logoNombre from '@/assets/logos/logo_nombre.avif';
 ---
 
 <section
   id="hero"
-  class="before:conten-[''] before:right-o relative flex h-[750px] w-full items-start justify-end overflow-hidden text-blackolive-100 before:absolute before:top-[70px] before:left-16 before:-z-10 before:h-full before:w-full before:bg-[url('../assets/mock/hero-claro.avif')] before:bg-contain before:bg-no-repeat before:opacity-30 sm:right-0 sm:h-[900px] sm:before:top-0 lg:left-0 lg:h-dvh lg:items-center lg:before:bg-right-top lg:before:opacity-100"
+  class="before:conten-[''] before:right-o relative flex h-[620px] w-full items-start justify-end overflow-hidden text-blackolive-100 before:absolute before:top-[70px] before:left-16 before:-z-10 before:h-full before:w-full before:bg-[url('../assets/mock/hero-claro.avif')] before:bg-contain before:bg-no-repeat before:opacity-30 sm:right-0 sm:h-[730px] sm:before:top-0 lg:left-0 lg:h-dvh lg:items-center lg:before:bg-right-top lg:before:opacity-100"
 >
-  <div class="flex h-full flex-col items-center justify-center lg:h-auto lg:items-start">
-    <h1 class="w-full sm:w-[70%] lg:w-[65%] xl:w-[70%]">
-      <picture>
-        <source
-          srcset={logoCompacto.src}
-          type="image/svg+xml"
-          media="(max-width: 1023px)"
-          class="w-[25%] object-contain"
+  <div class="flex h-full flex-col items-center justify-end lg:h-auto lg:items-start">
+    <h1 class="w-full place-items-center sm:w-[70%] lg:w-[65%] xl:w-[70%]">
+      <img
+        src={logoCompacto.src}
+        alt="Logotipo Planifica Mejor compacto"
+        class="w-[90%] object-contain lg:hidden"
+      />
+      <div class="flex w-full items-center justify-start">
+        <img
+          src={logoSolo.src}
+          alt="Logotipo Planifica Mejor"
+          class="hidden w-[40%] object-contain object-center lg:block"
         />
         <img
-          src={logoCompleto.src}
-          alt="Planifica Mejor"
-          class="h-full w-full object-contain object-center"
+          src={logoNombre.src}
+          alt="Logotipo Planifica Mejor- palabras"
+          class="-ml-16 hidden object-contain lg:block lg:w-[75%] xl:w-[70%]"
         />
-      </picture>
+      </div>
     </h1>
-    <div class="w-full px-5 text-left sm:mt-0 sm:ml-3 lg:w-[60%] xl:ml-12 xl:w-[55%] 2xl:w-[70%]">
+    <div
+      class="w-full px-5 text-center sm:mt-0 sm:ml-3 lg:w-[60%] lg:text-left xl:ml-12 xl:w-[55%] 2xl:w-[70%]"
+    >
       <h2
         class="font-titulo text-3xl leading-7 font-bold tracking-wider sm:text-4xl sm:leading-9 lg:text-5xl lg:leading-12 xl:text-6xl xl:leading-14 2xl:text-8xl 2xl:leading-[82px]"
       >

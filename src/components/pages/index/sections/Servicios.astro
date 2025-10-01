@@ -1,0 +1,87 @@
+---
+import Container from '@/components/base-components/Container.astro';
+import Titulo from '@/components/base-components/Titulo.astro';
+---
+
+<Container id="servicios">
+  <Titulo
+    titulo="Mis servicios"
+    texto="Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. "
+  />
+
+  <div
+    class="mx-auto grid h-[700px] w-full place-items-center bg-[url('../assets/svg/logo_compacto.svg')] bg-contain bg-center bg-no-repeat"
+  >
+    <div class="centro">
+      <div class="servicio"> </div>
+      <div class="servicio"></div>
+      <div class="servicio"></div>
+      <div class="servicio"></div>
+      <div class="servicio"></div>
+      <div class="servicio"></div>
+      <div class="servicio"></div>
+    </div>
+  </div>
+  <div></div>
+</Container>
+
+<style>
+  svg .svg-flecha-1 {
+    stroke-dashoffset: 338.4143371582031px;
+    stroke-dasharray: 338.4143371582031px;
+    -webkit-transition: stroke-dashoffset 1s linear 0s;
+    transition: stroke-dashoffset 1s linear 0s;
+  }
+
+  svg.active .svg-elem-1 {
+    stroke-dashoffset: 676.8286743164062px;
+  }
+
+  .centro {
+    position: relative;
+    height: 100px;
+    aspect-ratio: 1;
+    background-color: aqua;
+    z-index: 0;
+  }
+
+  .servicio {
+    --size: 25px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    aspect-ratio: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    z-index: 100;
+  }
+
+  .servicio:nth-child(1) {
+    transform: translate(calc(cos(0deg) * 200px), calc(sin(0deg) * 200px));
+  }
+
+  .servicio:nth-child(2) {
+    transform: translate(calc(cos(60deg) * 200px), calc(sin(60deg) * 200px));
+  }
+
+  .servicio:nth-child(3) {
+    transform: translate(calc(cos(120deg) * 200px), calc(sin(120deg) * 200px));
+  }
+
+  .servicio:nth-child(4) {
+    transform: translate(calc(cos(180deg) * 200px), calc(sin(180deg) * 200px));
+  }
+
+  .servicio:nth-child(5) {
+    transform: translate(calc(cos(240deg) * 200px), calc(sin(240deg) * 200px));
+  }
+
+  .servicio:nth-child(6) {
+    transform: translate(calc(cos(300deg) * 200px), calc(sin(300deg) * 200px));
+  }
+  .servicio:nth-child(7) {
+    transform: translate(calc(cos(360deg) * 200px), calc(sin(360deg) * 200px));
+  }
+</style>

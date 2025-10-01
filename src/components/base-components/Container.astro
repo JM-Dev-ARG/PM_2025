@@ -9,10 +9,7 @@ interface Props {
 const { id, classNameSeccion, classNameContainer } = Astro.props;
 ---
 
-<section
-  id={id}
-  class={`w-full flex flex-col justify-between ${classNameSeccion} sm:mt-8 lg:mt-16`}
->
+<section id={id} class={`w-full flex flex-col justify-between ${classNameSeccion} mt-8 lg:mt-16`}>
   <div
     class={`h-full w-full max-w-[1440px] mx-auto grid place-items-center px-4 ${classNameContainer}`}
   >
