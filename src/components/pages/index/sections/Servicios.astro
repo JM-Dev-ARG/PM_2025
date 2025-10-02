@@ -12,14 +12,14 @@ import Titulo from '@/components/base-components/Titulo.astro';
   <div
     class="mx-auto grid h-[700px] w-full place-items-center bg-[url('../assets/svg/logo_compacto.svg')] bg-contain bg-center bg-no-repeat"
   >
-    <div class="centro">
-      <div class="servicio"> </div>
-      <div class="servicio"></div>
-      <div class="servicio"></div>
-      <div class="servicio"></div>
-      <div class="servicio"></div>
-      <div class="servicio"></div>
-      <div class="servicio"></div>
+    <div class="centro text-white">
+      <div class="servicio" style="--horizontal:200% ; --vertical:200%;">1</div>
+      <div class="servicio" style="--horizontal:350% ; --vertical:0%;">2</div>
+      <div class="servicio" style="--horizontal:-450% ; --vertical:-200%;">3</div>
+      <div class="servicio" style="--horizontal:-350% ; --vertical:0%;">4</div>
+      <div class="servicio" style="--horizontal:0% ; --vertical:-200%;">5</div>
+      <div class="servicio" style="--horizontal:-200% ; --vertical:200%;">6</div>
+      <div class="servicio" style="--horizontal:230% ; --vertical:-200%;">7</div>
     </div>
   </div>
   <div></div>
@@ -39,49 +39,113 @@ import Titulo from '@/components/base-components/Titulo.astro';
 
   .centro {
     position: relative;
-    height: 100px;
+    height: 200px;
     aspect-ratio: 1;
     background-color: aqua;
     z-index: 0;
   }
 
   .servicio {
-    --size: 25px;
+    --size: 100px;
+    --vertical: 0;
+    --horizontal: 0;
+    opacity: 0;
     position: absolute;
-    height: 100px;
-    width: 100px;
     aspect-ratio: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: var(--size);
+    aspect-ratio: 1;
+    top: calc(var(--size) / 2);
+    left: calc(var(--size) / 2);
     background: #000;
     z-index: 100;
+
+    /* transform: translate(
+      calc(cos(var(--angulo)) * var(--offset)),
+      calc(sin(var(--angulo)) * var(--offset))
+    ); */
+    /* transform: translate(var(--horizontal), var(--vertical)); */
   }
 
-  .servicio:nth-child(1) {
-    transform: translate(calc(cos(0deg) * 200px), calc(sin(0deg) * 200px));
-  }
+  /*   .servicio:nth-child(1) {
+    --horizontal: 200%;
+    --vertical: 20%;
+  } */
 
-  .servicio:nth-child(2) {
-    transform: translate(calc(cos(60deg) * 200px), calc(sin(60deg) * 200px));
+  .servicio__animacion {
+    animation: moveOut 1s linear forwards;
   }
-
-  .servicio:nth-child(3) {
-    transform: translate(calc(cos(120deg) * 200px), calc(sin(120deg) * 200px));
-  }
-
-  .servicio:nth-child(4) {
-    transform: translate(calc(cos(180deg) * 200px), calc(sin(180deg) * 200px));
-  }
-
-  .servicio:nth-child(5) {
-    transform: translate(calc(cos(240deg) * 200px), calc(sin(240deg) * 200px));
-  }
-
-  .servicio:nth-child(6) {
-    transform: translate(calc(cos(300deg) * 200px), calc(sin(300deg) * 200px));
-  }
-  .servicio:nth-child(7) {
-    transform: translate(calc(cos(360deg) * 200px), calc(sin(360deg) * 200px));
+  @keyframes moveOut {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(var(--horizontal), var(--vertical));
+    }
   }
 </style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const servicios = document.querySelectorAll('.servicio');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            /* agrega la clase de animacion */
+            /* @ts-ignore */
+            entry.target.classList.add('servicio__animacion');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    servicios.forEach((servicio) => observer.observe(servicio));
+  });
+</script>
+
+<!-- 
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const servicios = document.querySelectorAll('.servicio');
+
+    // asignar ángulos
+    servicios.forEach((servicio, index) => {
+      servicio.style.setProperty('--angulo', `${(index * 360) / servicios.length}deg`);
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateOffset(entry.target, 300, 1000); // hasta 200px en 1s
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    servicios.forEach((servicio) => observer.observe(servicio));
+
+    function animateOffset(el, target, duration) {
+      let start = null;
+      const initial = parseFloat(getComputedStyle(el).getPropertyValue('--offset')) || 0;
+
+      function step(ts) {
+        if (!start) start = ts;
+        const progress = Math.min((ts - start) / duration, 1);
+        const current = initial + (target - initial) * progress;
+        el.style.setProperty('--offset', current + 'px');
+        el.style.setProperty('opacity', progress);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    }
+  });
+</script> -->

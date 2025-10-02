@@ -7,8 +7,8 @@ interface Props {
 const { titulo, texto } = Astro.props;
 ---
 
-<div class="ml-16 flex w-full flex-col items-start justify-start gap-6">
-  <h3 class="relative text-3xl font-bold text-blackolive-100 italic sm:text-6xl">
+<div class="flex w-full flex-col items-start justify-start gap-6">
+  <h3 class="relative ml-16 text-3xl font-bold text-blackolive-100 italic sm:text-6xl">
     {titulo}
     <div
       class="absolute top-1 -left-3 size-[40px] rounded-tl-[8px] border-l-8 border-turquoise-300 sm:top-2 sm:-left-5 sm:size-[64px]"
@@ -17,7 +17,7 @@ const { titulo, texto } = Astro.props;
       class="absolute top-1 -left-3 size-[40px] rounded-br-[8px] border-b-8 border-risdblue-300 sm:top-2 sm:-left-5 sm:size-[64px]"
     ></div>
   </h3>
-  <p class="w-[80%] text-lg tracking-[5%] text-oxfordblue-400 sm:text-xl">
+  <p class="ml-16 w-[80%] text-lg tracking-[5%] text-oxfordblue-400 sm:text-xl">
     {texto}
   </p>
 </div>
