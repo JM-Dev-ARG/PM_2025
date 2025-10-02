@@ -1,0 +1,96 @@
+---
+interface Props {
+  titulo: string;
+  descripcion: string;
+  urlDestino: string;
+  vertical: string;
+  horizontal: string;
+}
+
+const { titulo, descripcion, urlDestino, vertical, horizontal } = Astro.props;
+---
+
+<div
+  class="servicio text-4xl font-bold text-blackolive-100"
+  style={`--horizontal:${horizontal}% ; --vertical:${vertical}%;`}
+  data-urlDestino={urlDestino}
+  data-descripcion={descripcion}
+  data-titulo={titulo}
+>
+  <button class="btn-modal cursor-pointer text-4xl font-bold text-blackolive-100">
+    {titulo}
+  </button>
+</div>
+<!-- <dialog
+  closedby="any"
+  id="modal"
+  class="modal inset-0 m-auto w-2/5 rounded-3xl border-2 border-turquoise-200 bg-oxfordblue-500/80 p-6 text-seasalt-100 shadow-lg backdrop-blur-md backdrop:bg-transparent backdrop:backdrop-blur-xs"
+>
+  <div class="relative flex items-center justify-center">
+    <p class="mb-4">{titulo}</p>
+    <form method="dialog">
+      <button
+        class="absolute -top-4 -right-3 cursor-pointer text-base transition-colors duration-300 ease-linear hover:text-turquoise-400"
+        >X</button
+      >
+    </form>
+  </div>
+
+  <p class="text-lg font-light text-pretty">
+    {descripcion}
+  </p>
+
+  <div class="mt-4 flex h-full items-center justify-center">
+    <a
+      class="flex h-full cursor-pointer flex-col items-center justify-center rounded-lg bg-neutral-50 px-3 py-4 text-2xl font-semibold text-neutral-900 transition-all duration-500 hover:scale-[98%] 2xl:px-6"
+      href={urlDestino}
+    >
+      <p class="">Comencemos</p>
+    </a>
+  </div>
+</dialog> -->
+<style>
+  .servicio {
+    --size: 50%;
+    --vertical: 0;
+    --horizontal: 0;
+    opacity: 0;
+    position: absolute;
+    aspect-ratio: 1;
+    min-width: var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(var(--size) / 2);
+    left: calc(var(--size) / 2);
+    text-align: center;
+  }
+
+  .servicio__animacion {
+    animation: moveOut 1s linear forwards;
+  }
+  @keyframes moveOut {
+    0% {
+      opacity: 0;
+      transform: translate(0, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(var(--horizontal), var(--vertical));
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const btnModal = document.querySelectorAll('.btn-modal');
+
+    btnModal.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        /*@ts-ignore */
+        const modal = btn.closest('.servicio').querySelector('dialog') as HTMLDialogElement;
+        modal.showModal();
+      });
+    });
+  });
+</script>
