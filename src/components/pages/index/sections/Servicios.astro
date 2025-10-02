@@ -1,7 +1,7 @@
 ---
 import Container from '@/components/base-components/Container.astro';
 import Titulo from '@/components/base-components/Titulo.astro';
-import imgFondo from '@/assets/svg/logo_compacto.svg';
+import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
 import dataServPersonas from '@/Data/itemsServiciosPersonas.json';
 import ItemServiciosModal from '@/components/base-components/ItemServiciosModal.astro';
 ---
@@ -13,11 +13,17 @@ import ItemServiciosModal from '@/components/base-components/ItemServiciosModal.
   />
 
   <div class="relative mx-auto grid h-[700px] w-full place-items-center">
-    <img
-      src={imgFondo.src}
-      alt=""
-      class="absolute top-1/2 left-1/2 -z-10 h-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 object-contain object-center"
-    />
+    <div
+      class="absolute top-1/2 left-1/2 -z-10 flex h-1/3 w-1/3 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center"
+    >
+      <img
+        src={imgFondo.src}
+        alt=""
+        class="aspect-square h-[80%] w-[80%] object-contain object-top"
+      />
+      <p class="text-6xl font-black text-oxfordblue-500">PERSONAS</p>
+    </div>
+
     <div class="centro relative">
       {
         dataServPersonas.map((item) => (
@@ -27,6 +33,9 @@ import ItemServiciosModal from '@/components/base-components/ItemServiciosModal.
             urlDestino={item.urlDestino}
             vertical={item.vertical}
             horizontal={item.horizontal}
+            verticalFlecha={item.verticalFlecha}
+            horizontalFlecha={item.horizontalFlecha}
+            rotate={item.rotate}
           />
         ))
       }
@@ -34,7 +43,7 @@ import ItemServiciosModal from '@/components/base-components/ItemServiciosModal.
     <dialog
       closedby="any"
       id="modal"
-      class="modal inset-0 m-auto w-2/5 rounded-3xl border-2 border-turquoise-200 bg-oxfordblue-500/80 p-6 text-seasalt-100 shadow-lg backdrop-blur-md backdrop:bg-transparent backdrop:backdrop-blur-xs"
+      class="modal fixed inset-0 m-auto w-2/5 rounded-3xl border-2 border-turquoise-200 bg-oxfordblue-500/80 p-6 text-seasalt-100 shadow-lg backdrop-blur-md backdrop:bg-transparent backdrop:backdrop-blur-xs"
     >
       <div class="relative flex items-center justify-center">
         <p class="titulo mb-4 text-4xl font-bold"></p>
