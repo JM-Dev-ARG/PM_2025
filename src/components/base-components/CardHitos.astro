@@ -65,7 +65,7 @@ const { fecha, titulo, descripcion } = Astro.props;
     top: calc(100% + 10px); /* debajo del círculo */
     left: 50%; /* centrada horizontalmente */
     width: 4px; /* grosor de la línea */
-    height: var(--line-height, 100px); /* altura hasta el siguiente */
+    height: calc(var(--line-height) + 15px); /* altura hasta el siguiente */
     background: #1ad6b4;
     transform: scaleY(0);
     transform-origin: top; /* crece de arriba hacia abajo */
@@ -84,6 +84,14 @@ const { fecha, titulo, descripcion } = Astro.props;
       transform: scaleY(1);
     }
   }
+
+  @media (min-width: 380px) {
+    .hito-esfera::after {
+      height: calc(var(--line-height, 100px) - var(--gap));
+    }
+  }
+
+  /* ===== LÍNEA EN VERTICAL (lg:flex-row → desktop) ===== */
 
   @media (min-width: 600px) {
     .hito-esfera::after {

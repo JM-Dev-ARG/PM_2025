@@ -1,11 +1,7 @@
 ---
 import Container from '@/components/base-components/Container.astro';
+import ServiciosPersonasWeb from '@/components/base-components/ServiciosPersonasWeb.astro';
 import Titulo from '@/components/base-components/Titulo.astro';
-import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
-import dataServPersonas from '@/data/itemsServiciosPersonas.json';
-import ItemServiciosModal from '@/components/base-components/ItemServiciosModal.astro';
-import FlechaSVG from '@/components/base-components/FlechaSVG.astro';
-
 ---
 
 <Container id="servicios">
@@ -14,74 +10,37 @@ import FlechaSVG from '@/components/base-components/FlechaSVG.astro';
     texto="Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. "
   />
 
-  <div class="relative mx-auto hidden h-[700px] w-full place-items-center lg:grid">
-    <div
-      class="absolute top-1/2 left-1/2 -z-10 flex h-1/3 w-1/3 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center"
-    >
-      <img
-        src={imgFondo.src}
-        alt=""
-        class="aspect-square h-[80%] w-[80%] object-contain object-top"
-      />
-      <p class="text-6xl font-black text-oxfordblue-500">PERSONAS</p>
-    </div>
+  <ServiciosPersonasWeb />
 
-    <div class="centro relative">
-      {
-        dataServPersonas.map((item) => (
-          <ItemServiciosModal
-            titulo={item.titulo}
-            descripcion={item.descripcion}
-            urlDestino={item.urlDestino}
-            vertical={item.vertical}
-            horizontal={item.horizontal}
-            verticalFlecha={item.verticalFlecha}
-            horizontalFlecha={item.horizontalFlecha}
-            rotate={item.rotate}
-            invertir={item.invertir}
-          />
-          <FlechaSVG
-           id={`flecha-${item.titulo}`}
-            horizontalFlecha={item.horizontalFlecha}
-            verticalFlecha={item.verticalFlecha}
-            rotate={item.rotate}
-            invertir={item.invertir}
-            
-          />
-        ))
-      }
-      
-    </div>
-    <dialog
-      closedby="any"
-      id="modal"
-      class="modal fixed inset-0 m-auto w-2/5 rounded-3xl border-2 border-turquoise-200 bg-oxfordblue-500/80 p-6 text-seasalt-100 shadow-lg backdrop-blur-md backdrop:bg-transparent backdrop:backdrop-blur-xs"
-    >
-      <div class="relative flex items-center justify-center">
-        <p class="titulo mb-4 text-4xl font-bold"></p>
-        <form method="dialog">
-          <button
-            class="absolute -top-4 -right-3 cursor-pointer text-xl font-bold transition-colors duration-300 ease-linear hover:text-turquoise-400"
-            >X</button
-          >
-        </form>
-      </div>
-
-      <p class="descripcion text-lg font-light text-pretty"> </p>
-
-      <div class="mt-4 flex h-full items-center justify-center">
-        <a
-          class="urlDestino flex h-full cursor-pointer flex-col items-center justify-center rounded-lg bg-neutral-50 px-3 py-4 text-2xl font-semibold text-neutral-900 transition-all duration-500 hover:scale-[98%] 2xl:px-6"
-          href={''}
+  <dialog
+    closedby="any"
+    id="modal"
+    class="modal fixed inset-0 m-auto w-2/5 rounded-3xl border-2 border-turquoise-200 bg-oxfordblue-500/80 p-6 text-seasalt-100 shadow-lg backdrop-blur-md backdrop:bg-transparent backdrop:backdrop-blur-xs"
+  >
+    <div class="relative flex items-center justify-center">
+      <p class="titulo mb-4 text-4xl font-bold"></p>
+      <form method="dialog">
+        <button
+          class="absolute -top-4 -right-3 cursor-pointer text-xl font-bold transition-colors duration-300 ease-linear hover:text-turquoise-400"
+          >X</button
         >
-          <p class="">Comencemos</p>
-        </a>
-      </div>
-    </dialog>
-  </div>
+      </form>
+    </div>
 
-  <div></div>
+    <p class="descripcion text-lg font-light text-pretty"> </p>
+
+    <div class="mt-4 flex h-full items-center justify-center">
+      <a
+        class="urlDestino flex h-full cursor-pointer flex-col items-center justify-center rounded-lg bg-neutral-50 px-3 py-4 text-2xl font-semibold text-neutral-900 transition-all duration-500 hover:scale-[98%] 2xl:px-6"
+        href={''}
+      >
+        <p class="">Comencemos</p>
+      </a>
+    </div>
+  </dialog>
 </Container>
+
+<div></div>
 
 <style>
   .svg-flecha-1 {
@@ -98,7 +57,6 @@ import FlechaSVG from '@/components/base-components/FlechaSVG.astro';
   .centro {
     position: relative;
     width: 100px;
-
     aspect-ratio: 1;
   }
 
@@ -123,8 +81,6 @@ import FlechaSVG from '@/components/base-components/FlechaSVG.astro';
       scale: 0;
     }
   }
-
-
 </style>
 
 <script>
@@ -147,29 +103,29 @@ import FlechaSVG from '@/components/base-components/FlechaSVG.astro';
       });
     });
 
-     const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Animación del servicio
-          entry.target.classList.add('servicio__animacion');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animación del servicio
+            entry.target.classList.add('servicio__animacion');
 
-          // Buscar la flecha asociada por ID
-          const titulo = entry.target.getAttribute('data-titulo');
-          const flecha = document.getElementById(`flecha-${titulo}`);
-          if (flecha) {
-            const path = flecha.querySelector('.svg-flecha-1');
-            if (path) {
-              path.classList.add('svg_animation');
+            // Buscar la flecha asociada por ID
+            const titulo = entry.target.getAttribute('data-titulo');
+            const flecha = document.getElementById(`flecha-${titulo}`);
+            if (flecha) {
+              const path = flecha.querySelector('.svg-flecha-1');
+              if (path) {
+                path.classList.add('svg_animation');
+              }
             }
-          }
 
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
     servicios.forEach((servicio) => observer.observe(servicio));
   });
 </script>
