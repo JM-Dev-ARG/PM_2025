@@ -1,6 +1,5 @@
 ---
 import comillas from '@/assets/img/comilla_logo.avif';
-import flecha1 from '@/assets/svg/flecha_1.svg';
 
 interface Props {
   titulo: string;
@@ -14,17 +13,7 @@ interface Props {
   invertir?: boolean;
 }
 
-const {
-  titulo,
-  descripcion,
-  urlDestino,
-  vertical,
-  horizontal,
-  verticalFlecha,
-  horizontalFlecha,
-  rotate,
-  invertir,
-} = Astro.props;
+const { titulo, descripcion, urlDestino, vertical, horizontal } = Astro.props;
 ---
 
 <div class="container__servicio">
