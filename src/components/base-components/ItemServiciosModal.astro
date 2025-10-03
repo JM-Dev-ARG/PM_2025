@@ -11,6 +11,7 @@ interface Props {
   verticalFlecha?: string;
   horizontalFlecha?: string;
   rotate?: string;
+  invertir?: boolean;
 }
 
 const {
@@ -22,32 +23,29 @@ const {
   verticalFlecha,
   horizontalFlecha,
   rotate,
+  invertir,
 } = Astro.props;
 ---
 
-<div
-  class="servicio text-4xl font-bold text-blackolive-100"
-  style={`--horizontal:${horizontal}% ; --vertical:${vertical}%;`}
-  data-urlDestino={urlDestino}
-  data-descripcion={descripcion}
-  data-titulo={titulo}
->
-  <button class="btn-modal relative cursor-pointer text-4xl font-bold text-blackolive-100">
-    {titulo}
-    <div class="absolute -top-3 -right-5 size-[20px]">
-      <img
-        src={comillas.src}
-        alt="Comillas logo Planifica Mejor"
-        class="h-full w-full object-cover"
-      />
-    </div>
-  </button>
-  <img
-    src={flecha1.src}
-    alt="flecha"
-    class={`flecha absolute top-1/2 left-1/2 h-[150px] aspect-square `}
-    style={`--horizontal:${horizontalFlecha}% ; --vertical:${verticalFlecha}%; --rotate:${rotate}deg;`}
-  />
+<div class="container__servicio">
+  <div
+    class="servicio text-4xl font-bold text-blackolive-100"
+    style={`--horizontal:${horizontal}% ; --vertical:${vertical}%;`}
+    data-urlDestino={urlDestino}
+    data-descripcion={descripcion}
+    data-titulo={titulo}
+  >
+    <button class="btn-modal relative cursor-pointer text-4xl font-bold text-blackolive-100">
+      {titulo}
+      <div class="absolute -top-3 -right-5 size-[20px]">
+        <img
+          src={comillas.src}
+          alt="Comillas logo Planifica Mejor"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </button>
+  </div>
 </div>
 
 <style>
@@ -67,11 +65,6 @@ const {
     text-align: center;
   }
 
-  .flecha {
-    --rotate: 0deg;
-    transform: translate(var(--horizontal), var(--vertical)) rotate(var(--rotate));
-  }
-
   .servicio__animacion {
     animation: moveOut 0.5s linear forwards;
   }
@@ -84,5 +77,16 @@ const {
       opacity: 1;
       transform: translate(var(--horizontal), var(--vertical));
     }
+  }
+
+  .svg-flecha-1 {
+    stroke-dashoffset: 338.4143371582031px;
+    stroke-dasharray: 338.4143371582031px;
+    -webkit-transition: stroke-dashoffset 1s linear 0s;
+    transition: stroke-dashoffset 1s linear 0s;
+  }
+
+  .active .svg-elem-1 {
+    stroke-dashoffset: 676.8286743164062px;
   }
 </style>

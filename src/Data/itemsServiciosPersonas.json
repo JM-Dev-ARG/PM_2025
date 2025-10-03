@@ -2,11 +2,12 @@
   {
     "titulo": "Fondo Educativo",
     "descripcion": "Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. ",
-    "vertical": "90",
+    "vertical": "120",
     "horizontal": "120",
-    "verticalFlecha": "-90",
-    "horizontalFlecha": "-100",
-    "rotate": "0",
+    "verticalFlecha": "80",
+    "horizontalFlecha": "-50",
+    "rotate": "-90",
+    "invertir": true,
     "urlDestino": "/servicios/fondo_educativo_form"
   },
   {
@@ -14,6 +15,10 @@
     "descripcion": "Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. ",
     "vertical": "0",
     "horizontal": "280",
+    "verticalFlecha": "10",
+    "horizontalFlecha": "-220",
+    "rotate": "-50",
+    "invertir": true,
     "urlDestino": "/servicios/ahorro_libre_form"
   },
   {
@@ -21,8 +26,8 @@
     "descripcion": "Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. ",
     "vertical": "-100",
     "horizontal": "-180",
-    "verticalFlecha": "20",
-    "horizontalFlecha": "10",
+    "verticalFlecha": "-80",
+    "horizontalFlecha": "-300",
     "rotate": "0",
     "urlDestino": "/servicios/emprendedor_form"
   },
@@ -31,8 +36,8 @@
     "descripcion": "Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. ",
     "vertical": "0",
     "horizontal": "-450",
-    "verticalFlecha": "-10",
-    "horizontalFlecha": "80",
+    "verticalFlecha": "0",
+    "horizontalFlecha": "-360",
     "rotate": "320",
     "urlDestino": "/servicios/retiro_form"
   },
@@ -41,7 +46,10 @@
     "descripcion": "Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. ",
     "vertical": "-180",
     "horizontal": "-50",
-    "urlDestino": "/servicios/sucesiones_form    "
+    "verticalFlecha": "-160",
+    "horizontalFlecha": "-120",
+    "rotate": "20",
+    "urlDestino": "/servicios/sucesiones_form"
   },
   {
     "titulo": "Independencia Financiera",
@@ -49,8 +57,8 @@
     "vertical": "70",
     "horizontal": "-180",
     "urlDestino": "/servicios/independencia_financiera_form",
-    "verticalFlecha": "-90",
-    "horizontalFlecha": "100",
+    "verticalFlecha": "90",
+    "horizontalFlecha": "-150",
     "rotate": "270"
   },
   {
@@ -58,6 +66,10 @@
     "descripcion": "Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. ",
     "vertical": "-100",
     "horizontal": "120",
+    "verticalFlecha": "-80",
+    "horizontalFlecha": "-110",
+    "rotate": "-30",
+    "invertir": true,
     "urlDestino": "/servicios/familia_ensamblada_form"
   }
 ]
