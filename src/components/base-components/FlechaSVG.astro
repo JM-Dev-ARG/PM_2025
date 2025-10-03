@@ -1,0 +1,54 @@
+---
+interface Props {
+  id: string;
+  horizontalFlecha: string;
+  verticalFlecha: string;
+  rotate: string;
+  invertir?: boolean;
+}
+
+const { id, horizontalFlecha, verticalFlecha, rotate, invertir } = Astro.props;
+---
+
+<svg
+  id={id}
+  class={`flecha absolute top-1/2 left-1/2 h-[140px] ${invertir ? 'scale-x-[-1]' : ''} `}
+  style={`--horizontal:${horizontalFlecha}% ; --vertical:${verticalFlecha}%; --rotate:${rotate}deg;`}
+  viewBox="0 0 175 222"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+>
+  <path
+    d="M22 2.5L40.5 20M22 2.5L2.5 20M22 2.5C26.5 81.5 46.9231 117.5 54 129C102.493 207.801 172.5 219.5 172.5 219.5"
+    stroke="#1b47ad"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="svg-flecha-1"></path>
+</svg>
+
+<style>
+  .flecha {
+    --scaleX: 0;
+    --rotate: 0deg;
+    transform: translate(var(--horizontal), var(--vertical)) rotate(var(--rotate));
+  }
+
+  .svg-flecha-1 {
+    stroke-dashoffset: 338.4143371582031px;
+    stroke-dasharray: 338.4143371582031px;
+  }
+
+  .svg_animation {
+    animation: animate-svg-stroke-1 0.5s linear 0.5s both;
+  }
+
+  @keyframes animate-svg-stroke-1 {
+    0% {
+      stroke-dashoffset: 338.4143371582031px;
+    }
+    100% {
+      stroke-dashoffset: 676.8286743164062px;
+    }
+  }
+</style>

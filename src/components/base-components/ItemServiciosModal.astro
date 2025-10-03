@@ -35,7 +35,9 @@ const {
     data-descripcion={descripcion}
     data-titulo={titulo}
   >
-    <button class="btn-modal relative cursor-pointer text-4xl font-bold text-blackolive-100">
+    <button
+      class="btn-modal relative cursor-pointer text-4xl font-bold text-blackolive-100 transition-all duration-300 hover:scale-110"
+    >
       {titulo}
       <div class="absolute -top-3 -right-5 size-[20px]">
         <img
@@ -77,16 +79,5 @@ const {
       opacity: 1;
       transform: translate(var(--horizontal), var(--vertical));
     }
-  }
-
-  .svg-flecha-1 {
-    stroke-dashoffset: 338.4143371582031px;
-    stroke-dasharray: 338.4143371582031px;
-    -webkit-transition: stroke-dashoffset 1s linear 0s;
-    transition: stroke-dashoffset 1s linear 0s;
-  }
-
-  .active .svg-elem-1 {
-    stroke-dashoffset: 676.8286743164062px;
   }
 </style>

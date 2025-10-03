@@ -5,6 +5,7 @@ import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
 import dataServPersonas from '@/Data/itemsServiciosPersonas.json';
 import ItemServiciosModal from '@/components/base-components/ItemServiciosModal.astro';
 import flecha1 from '@/assets/svg/flecha_1.svg';
+import FlechaSVG from '@/components/base-components/FlechaSVG.astro';
 
 ---
 
@@ -40,13 +41,14 @@ import flecha1 from '@/assets/svg/flecha_1.svg';
             rotate={item.rotate}
             invertir={item.invertir}
           />
-          <img
-    src={flecha1.src}
-    id={`flecha-${item.titulo}`}
-    alt="flecha"
-    class={`flecha absolute top-1/2 left-1/2 h-[150px] aspect-square ${item.invertir ? 'scale-x-[-1]' : ''} `}
-    style={`--horizontal:${item.horizontalFlecha}% ; --vertical:${item.verticalFlecha}%; --rotate:${item.rotate}deg;`}
-  />
+          <FlechaSVG
+           id={`flecha-${item.titulo}`}
+            horizontalFlecha={item.horizontalFlecha}
+            verticalFlecha={item.verticalFlecha}
+            rotate={item.rotate}
+            invertir={item.invertir}
+            
+          />
         ))
       }
       
@@ -83,14 +85,14 @@ import flecha1 from '@/assets/svg/flecha_1.svg';
 </Container>
 
 <style>
-  svg .svg-flecha-1 {
+  .svg-flecha-1 {
     stroke-dashoffset: 338.4143371582031px;
     stroke-dasharray: 338.4143371582031px;
     -webkit-transition: stroke-dashoffset 1s linear 0s;
     transition: stroke-dashoffset 1s linear 0s;
   }
 
-  svg.active .svg-elem-1 {
+  .active .svg-elem-1 {
     stroke-dashoffset: 676.8286743164062px;
   }
 
@@ -105,9 +107,9 @@ import flecha1 from '@/assets/svg/flecha_1.svg';
     opacity: 0;
     scale: 0;
     transition:
-      opacity 0.5s ease-in-out,
-      scale 0.5s ease-in-out,
-      display 0.5s ease-in-out;
+      opacity 0.3s linear,
+      scale 0.3s linear,
+      display 0.3s linear;
     transition-behavior: allow-discrete;
   }
 
@@ -123,11 +125,7 @@ import flecha1 from '@/assets/svg/flecha_1.svg';
     }
   }
 
-  .flecha {
-    --scaleX: 0;
-    --rotate: 0deg;
-    transform: translate(var(--horizontal), var(--vertical)) rotate(var(--rotate));
-  }
+
 </style>
 
 <script>
@@ -150,20 +148,29 @@ import flecha1 from '@/assets/svg/flecha_1.svg';
       });
     });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            /* agrega la clase de animacion */
-            /* @ts-ignore */
-            entry.target.classList.add('servicio__animacion');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+     const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Animación del servicio
+          entry.target.classList.add('servicio__animacion');
 
+          // Buscar la flecha asociada por ID
+          const titulo = entry.target.getAttribute('data-titulo');
+          const flecha = document.getElementById(`flecha-${titulo}`);
+          if (flecha) {
+            const path = flecha.querySelector('.svg-flecha-1');
+            if (path) {
+              path.classList.add('svg_animation');
+            }
+          }
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
     servicios.forEach((servicio) => observer.observe(servicio));
   });
 </script>
