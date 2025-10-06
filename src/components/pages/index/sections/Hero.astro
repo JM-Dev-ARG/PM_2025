@@ -2,6 +2,7 @@
 import logoCompacto from '@/assets/svg/logo_compacto.svg';
 import logoSolo from '@/assets/svg/logo_sin_fondo.svg';
 import logoNombre from '@/assets/logos/logo_nombre.avif';
+import Subrayado from '@/components/base-components/Subrayado.astro';
 ---
 
 <section
@@ -37,18 +38,15 @@ import logoNombre from '@/assets/logos/logo_nombre.avif';
         Lorem ipsum dolor, sit amet
         <span class="subrayado relative inline-flex italic">
           consecteasda
-          <span
-            class="absolute bottom-0 -left-1.5 -z-10 h-[15px] w-[calc(100%+0.5rem)] -skew-x-[25deg] bg-turquoise-200 sm:h-[18px] lg:h-[24px] xl:h-[30px]"
-          >
-          </span>
+          <Subrayado />
         </span>
       </h2>
-      <p class="pt-4 text-sm tracking-wider text-oxfordblue-400 sm:text-lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, corrupti consectetur
-        dolorem commodi sit ratione amet! Magni earum, adipisci illum delectus facilis
-        necessitatibus facere praesentium repellat soluta voluptate placeat tenetur?
-      </p>
     </div>
+    <p class="pt-4 text-sm tracking-wider text-oxfordblue-400 sm:text-lg">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, corrupti consectetur
+      dolorem commodi sit ratione amet! Magni earum, adipisci illum delectus facilis necessitatibus
+      facere praesentium repellat soluta voluptate placeat tenetur?
+    </p>
   </div>
 </section>
 

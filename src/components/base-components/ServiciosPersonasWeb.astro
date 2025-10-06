@@ -3,6 +3,7 @@ import dataServPersonas from '@/data/itemsServiciosPersonas.json';
 import ItemServiciosWeb from './ItemServiciosWeb.astro';
 import FlechaSVG from './FlechaSVG.astro';
 import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
+import Subrayado from './Subrayado.astro';
 ---
 
 <div class="relative mx-auto hidden h-[700px] w-full place-items-center lg:grid">
@@ -12,9 +13,12 @@ import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
     <img
       src={imgFondo.src}
       alt=""
-      class="aspect-square h-[80%] w-[80%] object-contain object-top"
+      class="aspect-square h-[70%] w-[70%] object-contain object-top"
     />
-    <p class="text-6xl font-black text-oxfordblue-500">PERSONAS</p>
+    <span class="relative text-5xl font-black text-oxfordblue-500"
+      >PERSONAS
+      <Subrayado />
+    </span>
   </div>
 
   <div class="centro relative aspect-square w-[100px]">
