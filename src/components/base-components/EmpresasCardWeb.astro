@@ -39,6 +39,22 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
     justify-content: center;
     border: 2px solid var(--color-turquoise-200);
     border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      right: 0;
+      width: 850px;
+      height: 850px;
+      background-image: url('../../assets/svg/logo_vacio_linea.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.08;
+    }
 
     .card__content_normal {
       display: flex;
@@ -137,8 +153,7 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
     .card__content_normal
     .descripcion_card_empresas
     .texto__expandido {
-    opacity: 0;
-    display: none;
+    opacity: 0; /* display: none; es redundante y se puede quitar */
     transition-delay: 0s;
     transition-duration: 0.3s;
   }
