@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "Directivos",
+    "textoCorto": "Lorem ipsum dolor sit amet consectetur. Mollis in in blandit mattis. Rhoncus quam tempus cras",
+    "textoLargo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia, a beatae perspiciatis, voluptate voluptatem voluptatibus vitae odit, voluptas dolore quos illo quis numquam minima eius facere aperiam illum ratione?Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia, a beatae perspiciatis, voluptate voluptatem voluptatibus vitae odit, voluptas dolore quos illo quis numquam minima eius facere aperiam illum ratione?",
+    "href": "/servicios/directivos_form"
+  },
+  {
+    "titulo": "Sociedades",
+    "textoCorto": "Lorem ipsum dolor sit amet consectetur. Mollis in in blandit mattis. Rhoncus quam tempus cras",
+    "textoLargo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia, a beatae perspiciatis, voluptate voluptatem voluptatibus vitae odit, voluptas dolore quos illo quis numquam minima eius facere aperiam illum ratione?Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia, a beatae perspiciatis, voluptate voluptatem voluptatibus vitae odit, voluptas dolore quos illo quis numquam minima eius facere aperiam illum ratione?",
+    "href": "/servicios/sociedades_form"
+  },
+  {
+    "titulo": "Retiro Colectivo",
+    "textoCorto": "Lorem ipsum dolor sit amet consectetur. Mollis in in blandit mattis. Rhoncus quam tempus cras",
+    "textoLargo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia, a beatae perspiciatis, voluptate voluptatem voluptatibus vitae odit, voluptas dolore quos illo quis numquam minima eius facere aperiam illum ratione?Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni mollitia, a beatae perspiciatis, voluptate voluptatem voluptatibus vitae odit, voluptas dolore quos illo quis numquam minima eius facere aperiam illum ratione?",
+    "href": "/servicios/retiro_colectivo_form"
+  }
+]
