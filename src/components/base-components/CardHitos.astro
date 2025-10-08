@@ -9,9 +9,9 @@ const { fecha, titulo, descripcion } = Astro.props;
 
 <div class="relative flex w-full flex-1 items-center justify-center gap-6 lg:flex-col">
   <div
-    class="hito-esfera relative mx-auto grid aspect-square w-[30%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500 sm:w-[20%] lg:w-[60%] xl:w-[55%]"
+    class="hito-esfera relative mx-auto grid aspect-square w-[20%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500 sm:w-[17%] lg:w-[55%]"
   >
-    <p class="text-xl font-semibold text-seasalt-100 lg:text-2xl 2xl:text-3xl">{fecha}</p>
+    <p class="text-lg font-semibold text-seasalt-100 lg:text-2xl 2xl:text-3xl">{fecha}</p>
     <div class="absolute right-1 bottom-1 aspect-square h-full">
       <svg
         width="94"
@@ -67,7 +67,7 @@ const { fecha, titulo, descripcion } = Astro.props;
     top: calc(100% + 10px); /* debajo del círculo */
     left: 50%; /* centrada horizontalmente */
     width: 4px; /* grosor de la línea */
-    height: calc(var(--line-height) + 15px); /* altura hasta el siguiente */
+    height: calc(var(--line-height) + 50px); /* altura hasta el siguiente */
     background: #1ad6b4;
     transform: scaleY(0);
     transform-origin: top; /* crece de arriba hacia abajo */
@@ -89,6 +89,7 @@ const { fecha, titulo, descripcion } = Astro.props;
 
   @media (min-width: 380px) {
     .hito-esfera::after {
+      top: calc(100% + 15px);
       height: calc(var(--line-height, 100px) - var(--gap));
     }
   }
@@ -97,7 +98,8 @@ const { fecha, titulo, descripcion } = Astro.props;
 
   @media (min-width: 600px) {
     .hito-esfera::after {
-      height: calc(var(--line-height, 100px) - var(--gap-md, 4.5rem));
+      top: calc(100% + 10px);
+      height: calc(var(--line-height, 100px) - var(--gap-md, 4.5rem) + 25px);
     }
   }
 

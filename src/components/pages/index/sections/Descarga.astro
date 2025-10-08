@@ -3,64 +3,67 @@ import Container from '@/components/base-components/Container.astro';
 import libroImg from '@/assets/mock/libro_mock.avif';
 ---
 
-<Container id="descarga" classNameContainer="overflow-hidden">
+<Container
+  id="descarga"
+  classNameContainer=" sm:place-items-start lg:place-items-center overflow-hidden"
+>
   <div
-    class="relative my-6 flex h-[650px] w-full items-center justify-start rounded-l-2xl rounded-r-[200px] bg-oxfordblue-400 py-8 shadow-PM sm:h-[500px] sm:w-[90%] sm:rounded-r-[250px]"
+    class="relative my-2 flex h-[560px] w-full items-center justify-start rounded-l-2xl rounded-r-[200px] bg-oxfordblue-400 py-8 pl-8 shadow-PM sm:h-auto sm:w-[90%] sm:rounded-r-[250px] xl:w-[80%]"
   >
     <img
       src={libroImg.src}
       alt="Libro"
-      class="absolute top-1/2 -right-[15%] hidden -translate-y-1/2 rotate-[27deg] object-cover object-center sm:block sm:h-[350px] lg:h-[500px] xl:-right-[10%] xl:h-[600px]"
+      class="absolute top-1/2 -right-[15%] hidden -translate-y-1/2 rotate-[40deg] object-cover object-center sm:block sm:h-[350px] lg:-right-[10%] lg:h-[450px] xl:-right-[10%] xl:h-[500px]"
     />
 
-    <div class="flex w-[90%] flex-col items-center justify-center gap-6 sm:w-[70%]">
-      <p class="w-[80%] text-center text-2xl text-seasalt-100 sm:text-3xl lg:text-4xl xl:text-5xl"
+    <div class="flex w-full flex-col items-start justify-center gap-6 sm:w-[80%]">
+      <p class="w-[80%] text-center text-2xl leading-tight text-seasalt-100 sm:text-3xl lg:text-4xl"
         >Todo lo que necesitas saber para contratar un seguro está en esta guía <span
           class="font-semibold text-turquoise-300 italic">digital y gratuita.</span
         ></p
       >
-      <form action="" class="flex w-[80%] flex-col items-center justify-center gap-6">
+      <form action="" class="flex w-[80%] flex-col items-center justify-center gap-4">
         <div class="flex w-full flex-col gap-6 sm:flex-row">
           <div class="flex flex-1 flex-col gap-2">
-            <label for="nombre" class="font-semibold text-seasalt-100 sm:text-xl lg:text-2xl"
+            <label for="nombre" class="font-semibold text-seasalt-100 sm:text-lg lg:text-xl"
               >Nombre</label
             >
             <input
               type="text"
               id="nombre"
               inputmode="text"
-              class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2.5 pl-2.5 placeholder:text-blackolive-100/60 focus:outline-none"
+              class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
               placeholder="Juan"
             />
           </div>
           <div class="flex flex-1 flex-col gap-2">
-            <label for="apellido" class="font-semibold text-seasalt-100 sm:text-xl lg:text-2xl"
+            <label for="apellido" class="font-semibold text-seasalt-100 sm:text-lg lg:text-xl"
               >Apellido</label
             >
             <input
               type="text"
               id="apellido"
               inputmode="text"
-              class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2.5 pl-2.5 placeholder:text-blackolive-100/60 focus:outline-none"
+              class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
               placeholder="Lopez"
             />
           </div>
         </div>
         <div class="flex w-full flex-col gap-2">
-          <label for="email" class="font-semibold text-seasalt-100 sm:text-xl lg:text-2xl"
+          <label for="email" class="font-semibold text-seasalt-100 sm:text-lg lg:text-xl"
             >Email</label
           >
           <input
             type="email"
             id="email"
             inputmode="email"
-            class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2.5 pl-2.5 placeholder:text-blackolive-100/60 focus:outline-none"
+            class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
             placeholder="juanlopez@tumail.com"
           />
         </div>
         <input
           type="submit"
-          class="rounded-full border border-seasalt-100 bg-oxfordblue-300 px-12 py-2.5 text-xl font-semibold text-seasalt-100 shadow-PM transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-turquoise-400 hover:shadow-none lg:text-2xl"
+          class="mt-3 cursor-pointer rounded-full border border-seasalt-100 bg-oxfordblue-300 px-12 py-2.5 text-xl font-semibold text-seasalt-100 shadow-PM transition-all duration-300 active:translate-x-[2px] active:translate-y-[2px] active:bg-turquoise-400 active:shadow-none lg:text-2xl"
           value="Solicita tu guía"
         />
       </form>

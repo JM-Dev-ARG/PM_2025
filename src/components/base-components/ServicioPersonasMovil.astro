@@ -3,21 +3,18 @@ import Subrayado from './Subrayado.astro';
 import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
 ---
 
-<div class="grid w-full place-items-center lg:hidden">
-  <div>
+<div class="mt-12 grid w-full place-items-center lg:hidden">
+  <div class="mx-auto grid w-full place-items-center">
     <h3
-      class="relative inline-flex text-3xl font-black text-oxfordblue-500 sm:text-5xl"
+      class="relative inline-flex text-2xl font-black text-oxfordblue-500 lg:text-5xl"
       aria-label="Empresas"
-    >
-      EM
-      <span class="w-[50px] sm:w-[80px]"></span>
-      RESAS
-      <Subrayado />
-      <img
+      ><span class="w-[40px]"></span><img
         src={imgFondo.src}
         alt=""
-        class="absolute -bottom-4 left-7 -z-10 w-[100px] object-cover object-top sm:-bottom-6 sm:left-[45px] sm:w-[163.33px]"
-      />
+        class="absolute -bottom-3 -left-[12px] z-10 w-[80px] object-cover object-top"
+      />ERSONAS
+      <Subrayado />
     </h3>
   </div>
+  <div> </div>
 </div>
