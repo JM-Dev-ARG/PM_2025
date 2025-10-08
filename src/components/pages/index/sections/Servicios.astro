@@ -106,9 +106,9 @@ import Titulo from '@/components/base-components/Titulo.astro';
             const titulo = entry.target.getAttribute('data-titulo');
             const flecha = document.getElementById(`flecha-${titulo}`);
             if (flecha) {
-              const path = flecha.querySelector('.svg-flecha-1');
+              const path = flecha.querySelector('.flecha-1');
               if (path) {
-                path.classList.add('svg_animation');
+                path.classList.add('svg_animation_flecha');
               }
             }
 

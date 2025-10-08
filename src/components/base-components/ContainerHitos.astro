@@ -13,7 +13,7 @@ import CardHitos from './CardHitos.astro';
 <script>
   document.addEventListener('astro:page-load', () => {
     const esferas = document.querySelectorAll('.hito-esfera');
-    const paths = document.querySelectorAll('.svg-path');
+    const paths = document.querySelectorAll('.svg-hito');
 
     if (!paths.length) return;
 
@@ -28,7 +28,7 @@ import CardHitos from './CardHitos.astro';
             const delayLinea = (delay + 0.8) * 1;
             /* @ts-ignore */
             path.style.setProperty('--delay', `${delay}s`);
-            path.classList.add('svg-animation');
+            path.classList.add('animation-hito');
 
             // animar línea del círculo solo si hay siguiente hito
             if (esferas[index] && index < esferas.length - 1) {

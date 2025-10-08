@@ -22,7 +22,7 @@ const { fecha, titulo, descripcion } = Astro.props;
         class="svg h-full w-full"
       >
         <path
-          class="svg-path"
+          class="svg-hito"
           d="M46.9131 1C72.2702 1 92.8262 21.5569 92.8262 46.9141C92.8262 72.2722 72.2693 92.8301 46.9111 92.8301H1V46.9131C1.00005 21.556 21.556 1.00006 46.9131 1Z"
           stroke="#1AD6B4"
           stroke-width="2"></path>
@@ -54,7 +54,7 @@ const { fecha, titulo, descripcion } = Astro.props;
     }
   }
 
-  .svg-path.svg-animation {
+  .animation-hito {
     animation: animate-svg-stroke-1 0.8s linear var(--delay, 0s) both;
   }
 
