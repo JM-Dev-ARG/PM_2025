@@ -1,0 +1,23 @@
+---
+import Subrayado from './Subrayado.astro';
+import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
+---
+
+<div class="grid w-full place-items-center lg:hidden">
+  <div>
+    <h3
+      class="relative inline-flex text-3xl font-black text-oxfordblue-500 sm:text-5xl"
+      aria-label="Empresas"
+    >
+      EM
+      <span class="w-[50px] sm:w-[80px]"></span>
+      RESAS
+      <Subrayado />
+      <img
+        src={imgFondo.src}
+        alt=""
+        class="absolute -bottom-4 left-7 -z-10 w-[100px] object-cover object-top sm:-bottom-6 sm:left-[45px] sm:w-[163.33px]"
+      />
+    </h3>
+  </div>
+</div>

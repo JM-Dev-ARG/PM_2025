@@ -4,7 +4,7 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
 ---
 
 <div
-  class="empresas__container hidden w-full items-center justify-between gap-4 overflow-hidden lg:flex xl:px-6"
+  class="empresas__container hidden w-full items-center justify-between gap-4 overflow-hidden lg:flex"
 >
   {
     dataEmpresas.map((item) => (
@@ -13,7 +13,7 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
           <h3 class="titulo_card_empresas font-bold text-seasalt-100">{item.titulo}</h3>
           <div class="descripcion_card_empresas text-lg">
             <p class="texto__corto">{item.textoCorto}</p>
-            <div class="texto__expandido">
+            <div class="texto__expandido leading-tight">
               <p>{item.textoLargo}</p>
               <div class="w-fit">
                 <BotonContacto texto="Comencemos" href={item.href} />
@@ -66,6 +66,7 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
       text-align: center;
       height: 100%;
       transition: all 0.5s linear;
+      z-index: 10;
 
       .titulo_card_empresas {
         height: 20%;

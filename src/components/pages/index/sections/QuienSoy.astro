@@ -9,7 +9,7 @@ import Numeros from '@/components/base-components/Numeros.astro';
 
 <Container id="quien_soy">
   <div class="relative flex h-auto w-full flex-col items-center justify-center gap-16 px-3">
-    <div class="flex h-auto w-full flex-col items-center justify-center gap-6 sm:flex-row">
+    <div class="flex h-auto w-full flex-col items-center justify-center gap-6 lg:flex-row">
       <img
         src={imgFondo.src}
         alt=""
@@ -28,12 +28,14 @@ import Numeros from '@/components/base-components/Numeros.astro';
         >
         </div>
       </div>
-      <div class="flex flex-1 flex-col items-center justify-start gap-3 text-pretty">
-        <p class="text-xl font-semibold text-risdblue-400 lg:text-2xl xl:text-3xl">
+      <div
+        class="flex w-[90%] flex-1 flex-col items-center justify-start gap-3 text-center text-pretty lg:w-full lg:text-left"
+      >
+        <p class="text-2xl font-semibold text-risdblue-400 lg:text-3xl xl:text-4xl">
           Soy Cristian De Benedetto y voy a ser tu Planificador Financiero.
         </p>
         <div
-          class="flex flex-col items-start justify-center gap-1 font-light text-blackolive-100 lg:text-base xl:text-2xl"
+          class="flex flex-col items-center justify-center gap-1 font-light text-blackolive-100 lg:items-start lg:text-base xl:text-xl"
         >
           <p>
             Mi meta es lograr que más personas y empresas cumplan sus objetivos

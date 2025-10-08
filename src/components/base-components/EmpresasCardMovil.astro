@@ -4,15 +4,15 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
 ---
 
 <div
-  class="empresas__container flex w-full flex-col items-center justify-between gap-4 overflow-hidden sm:w-[80%] lg:hidden xl:px-6"
+  class="empresas__container flex w-full flex-col items-center justify-between gap-4 overflow-hidden sm:w-[70%] lg:hidden xl:px-6"
 >
   {
     dataEmpresas.map((item) => (
-      <div class="empresas__card">
+      <div class="empresas__card__movil">
         <div class="card__content_normal">
           <h3 class="titulo_card_empresas font-bold text-seasalt-100">{item.titulo}</h3>
-          <div class="descripcion_card_empresas text-lg">
-            <p class="texto__corto">{item.textoLargo}</p>
+          <div class="descripcion_card_empresas text-base">
+            <p class="texto__corto leading-tight">{item.textoLargo}</p>
             <div class="w-fit">
               <BotonContacto texto="Comencemos" href={item.href} />
             </div>
@@ -24,7 +24,7 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
 </div>
 
 <style>
-  .empresas__card {
+  .empresas__card__movil {
     flex: 1;
     transition: all 0.5s linear;
     cursor: pointer;
@@ -34,6 +34,22 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
     justify-content: center;
     border: 2px solid var(--color-turquoise-200);
     border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      right: 0;
+      width: 650px;
+      height: 650px;
+      background-image: url('../../assets/svg/logo_vacio_linea.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.08;
+    }
 
     .card__content_normal {
       display: flex;
@@ -45,6 +61,7 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
       text-align: center;
       height: 100%;
       transition: all 0.5s linear;
+      z-index: 10;
 
       .titulo_card_empresas {
         height: 20%;
@@ -55,7 +72,8 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
         transition: all 0.5s linear;
         transform: rotate((0deg));
         overflow: hidden;
-        font-size: 48px;
+        font-size: 24px;
+        line-height: 24px;
       }
 
       .descripcion_card_empresas {
@@ -67,7 +85,7 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
         height: 70%;
         display: flex;
         flex-direction: column;
-        gap: 32px;
+        gap: 12px;
         font-weight: 300;
         align-items: center;
         justify-content: center;
