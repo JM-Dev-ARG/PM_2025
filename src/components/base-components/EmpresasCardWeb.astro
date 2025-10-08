@@ -4,16 +4,16 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
 ---
 
 <div
-  class="empresas__container hidden w-full items-center justify-between gap-4 overflow-hidden lg:flex"
+  class="empresas__container hidden w-full items-center justify-between gap-4 overflow-hidden lg:flex xl:px-6"
 >
   {
     dataEmpresas.map((item) => (
-      <div class="empresas__card mb-5 shadow-lg" tabindex="0">
+      <div class="empresas__card">
         <div class="card__content_normal">
           <h3 class="titulo_card_empresas font-bold text-seasalt-100">{item.titulo}</h3>
           <div class="descripcion_card_empresas text-lg">
             <p class="texto__corto">{item.textoCorto}</p>
-            <div class="texto__expandido leading-tight">
+            <div class="texto__expandido">
               <p>{item.textoLargo}</p>
               <div class="w-fit">
                 <BotonContacto texto="Comencemos" href={item.href} />
@@ -37,7 +37,7 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid var(--color-turquoise-200);
+    border: 2px solid var(--color-turquoise-200);
     border-radius: 24px;
     position: relative;
     overflow: hidden;
@@ -66,7 +66,6 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
       text-align: center;
       height: 100%;
       transition: all 0.5s linear;
-      z-index: 10;
 
       .titulo_card_empresas {
         height: 20%;

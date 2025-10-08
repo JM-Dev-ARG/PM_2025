@@ -1,0 +1,21 @@
+---
+import Carrousel from '@/components/base-components/Carrousel.astro';
+import Container from '@/components/base-components/Container.astro';
+import Titulo from '@/components/base-components/Titulo.astro';
+
+import dataImg from '@/data/logosEmpresas.json';
+---
+
+<Container id="empresas_respaldo">
+  <Titulo titulo="Me respaldan" />
+
+  <Carrousel>
+    {
+      dataImg.map((item) => (
+        <div class="flex h-24 w-[300px] items-center justify-center p-4 grayscale transition duration-300 ease-in-out hover:grayscale-0">
+          <img src={item.img} alt={item.alt} class="max-h-full max-w-full object-contain" />
+        </div>
+      ))
+    }
+  </Carrousel>
+</Container>

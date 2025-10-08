@@ -1,9 +1,10 @@
 ---
 import Subrayado from './Subrayado.astro';
 import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
+import dataPersonas from '@/data/itemsServiciosPersonas.json';
 ---
 
-<div class="mt-12 grid w-full place-items-center lg:hidden">
+<div class="mt-12 grid w-full place-items-center gap-6 lg:hidden">
   <div class="mx-auto grid w-full place-items-center">
     <h3
       class="relative inline-flex text-2xl font-black text-oxfordblue-500 lg:text-5xl"
@@ -16,5 +17,110 @@ import imgFondo from '@/assets/svg/logo_sin_fondo.svg';
       <Subrayado />
     </h3>
   </div>
-  <div> </div>
+  <section class="personas__container__movil">
+    {
+      dataPersonas.map((item, index) => (
+        <div
+          class={`servicio ${'a' + index}`}
+          data-urlDestino={item.urlDestino}
+          data-descripcion={item.descripcion}
+          data-titulo={item.titulo}
+        >
+          {item.titulo}
+          <p>VER +</p>
+        </div>
+      ))
+    }
+  </section>
+
+  <style>
+    .personas__container__movil {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    @media (min-width: 450px) {
+      .personas__container__movil {
+        width: 100%;
+        display: grid;
+        flex-direction: unset;
+        align-items: unset;
+        justify-content: unset;
+        grid:
+          'a a b' 1fr
+          'e c b' 1fr
+          'e d g' 1fr
+          'e f f' 1fr
+          / 1fr 1fr 1fr;
+      }
+    }
+
+    .a0 {
+      grid-area: a;
+    }
+    .a1 {
+      grid-area: b;
+    }
+    .a2 {
+      grid-area: e;
+    }
+    .a3 {
+      grid-area: c;
+    }
+    .a4 {
+      grid-area: d;
+    }
+    .a5 {
+      grid-area: g;
+    }
+    .a6 {
+      grid-area: f;
+    }
+
+    .a0,
+    .a1,
+    .a2,
+    .a3,
+    .a4,
+    .a5,
+    .a6 {
+      background-color: var(--color-oxfordblue-400);
+      color: var(--color-seasalt-100);
+      font-size: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 24px;
+      min-height: 150px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      border: 2px solid var(--color-turquoise-200);
+
+      p {
+        opacity: 0.5;
+        font-size: 14px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 150px;
+        height: 150px;
+        background-image: url('../../assets/svg/logo_vacio_linea.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 0.1;
+      }
+    }
+  </style>
 </div>

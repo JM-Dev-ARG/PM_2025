@@ -5,6 +5,8 @@ import ServicioPersonasMovil from '@/components/base-components/ServicioPersonas
 import ServiciosEmpresas from '@/components/base-components/ServiciosEmpresas.astro';
 import ServiciosPersonasWeb from '@/components/base-components/ServiciosPersonasWeb.astro';
 import Titulo from '@/components/base-components/Titulo.astro';
+
+import cerrarImg from '@/assets/svg/cerrar.svg';
 ---
 
 <Container id="servicios">
@@ -20,14 +22,14 @@ import Titulo from '@/components/base-components/Titulo.astro';
   <dialog
     closedby="any"
     id="modal"
-    class="modal fixed inset-0 m-auto w-2/5 rounded-3xl border-2 border-turquoise-200 bg-oxfordblue-500/85 p-6 text-seasalt-100 shadow-lg backdrop-blur-md backdrop:bg-transparent backdrop:backdrop-blur-xs"
+    class="modal fixed inset-0 m-auto w-[90%] rounded-3xl border-2 border-turquoise-200 bg-oxfordblue-500/85 p-6 text-seasalt-100 shadow-lg backdrop-blur-md backdrop:bg-transparent backdrop:backdrop-blur-xs sm:w-[80%] lg:w-2/5"
   >
     <div class="relative flex items-center justify-center">
       <p class="titulo mb-4 text-4xl font-bold"></p>
       <form method="dialog">
         <button
-          class="absolute -top-4 -right-3 cursor-pointer text-xl font-bold transition-colors duration-300 ease-linear hover:text-turquoise-400"
-          >X</button
+          class="transi absolute -top-4 -right-3 cursor-pointer text-xl font-bold transition-all duration-300 ease-linear hover:scale-115"
+          ><img src={cerrarImg.src} alt="imagen de cerrar X" /></button
         >
       </form>
     </div>
@@ -74,6 +76,9 @@ import Titulo from '@/components/base-components/Titulo.astro';
       opacity: 0;
       scale: 0;
     }
+  }
+  .icon:hover {
+    stroke: #1ad6b4;
   }
 </style>
 
