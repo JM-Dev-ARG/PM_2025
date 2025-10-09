@@ -8,7 +8,7 @@
     "horizontalFlecha": "-50",
     "rotate": "-95",
     "invertir": true,
-    "urlDestino": "https://wa.me/5401151325016?text=Hola, quiero hacerte una consulta sobre el fondo educativo!!"
+    "urlDestino": "https://wa.me/5401151325016?text=Hola Cristian, quiero hacerte una consulta sobre el fondo educativo"
   },
   {
     "titulo": "Ahorro Libre",
@@ -19,7 +19,7 @@
     "horizontalFlecha": "-195",
     "rotate": "-60",
     "invertir": true,
-    "urlDestino": "https://wa.me/5401151325016?text=Hola, quiero hacerte una consulta sobre el seguro de ahorro libre!!"
+    "urlDestino": "https://wa.me/5401151325016?text=Hola Cristian, quiero hacerte una consulta sobre el seguro de ahorro libre"
   },
   {
     "titulo": "Emprendedor",
@@ -29,7 +29,7 @@
     "verticalFlecha": "-95",
     "horizontalFlecha": "-300",
     "rotate": "0",
-    "urlDestino": "https://wa.me/5401151325016?text=Hola, quiero hacerte una consulta sobre el servicio para emprendedores!!"
+    "urlDestino": "https://wa.me/5401151325016?text=Hola Cristian, quiero hacerte una consulta sobre el servicio para emprendedores"
   },
   {
     "titulo": "Retiro",
@@ -39,7 +39,7 @@
     "verticalFlecha": "10",
     "horizontalFlecha": "-310",
     "rotate": "310",
-    "urlDestino": "https://wa.me/5401151325016?text=Hola, quiero hacerte una consulta sobre seguro de retiro!!"
+    "urlDestino": "https://wa.me/5401151325016?text=Hola Cristian, quiero hacerte una consulta sobre seguro de retiro"
   },
   {
     "titulo": "Sucesiones",
@@ -49,14 +49,14 @@
     "verticalFlecha": "-170",
     "horizontalFlecha": "-50",
     "rotate": "20",
-    "urlDestino": "https://wa.me/5401151325016?text=Hola, quiero hacerte una consulta sobre el seguro para sucesiones!!"
+    "urlDestino": "https://wa.me/5401151325016?text=Hola Cristian, quiero hacerte una consulta sobre el seguro para sucesiones"
   },
   {
     "titulo": "Independencia Financiera",
     "descripcion": "Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. Lorem ipsum dolor sit amet consectetur. In ultrices egestas morbi condimentum non leo volutpat id in. Pulvinar eu vitae lobortis donec orci blandit. Viverra fusce ipsum pellentesque aenean id pharetra erat faucibus sit. ",
     "vertical": "70",
     "horizontal": "-180",
-    "urlDestino": "https://wa.me/5401151325016?text=Hola, quiero hacerte una consulta sobre el seguro para independencia financiera!!",
+    "urlDestino": "https://wa.me/5401151325016?text=Hola Cristian, quiero hacerte una consulta sobre el seguro para independencia financiera",
     "verticalFlecha": "60",
     "horizontalFlecha": "-170",
     "rotate": "270"
@@ -70,6 +70,6 @@
     "horizontalFlecha": "-180",
     "rotate": "-10",
     "invertir": true,
-    "urlDestino": "https://wa.me/5401151325016?text=Hola, quiero hacerte una consulta sobre el seguro de familia ensamblada!!"
+    "urlDestino": "https://wa.me/5401151325016?text=Hola Cristian, quiero hacerte una consulta sobre el seguro de familia ensamblada"
   }
 ]

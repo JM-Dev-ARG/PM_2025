@@ -5,10 +5,10 @@ import libroImg from '@/assets/mock/libro_mock.avif';
 
 <Container
   id="descarga"
-  classNameContainer=" sm:place-items-start lg:place-items-center overflow-hidden"
+  classNameContainer=" sm:place-items-start xl:place-items-center overflow-hidden"
 >
   <div
-    class="relative my-2 flex h-[560px] w-full items-center justify-start rounded-l-2xl rounded-r-[200px] bg-oxfordblue-400 py-8 pl-8 shadow-PM sm:h-auto sm:w-[90%] sm:rounded-r-[250px] xl:w-[80%]"
+    class="relative my-2 flex h-[560px] w-full items-center justify-start rounded-l-2xl rounded-r-[120px] bg-linear-to-b from-oxfordblue-500 to-oxfordblue-400 py-8 pl-2 shadow-PM sm:h-auto sm:w-[90%] sm:rounded-r-[250px] sm:pl-8 xl:w-[80%]"
   >
     <img
       src={libroImg.src}
@@ -63,7 +63,7 @@ import libroImg from '@/assets/mock/libro_mock.avif';
         </div>
         <input
           type="submit"
-          class="mt-3 cursor-pointer rounded-full border border-seasalt-100 bg-oxfordblue-300 px-12 py-2.5 text-xl font-semibold text-seasalt-100 shadow-PM transition-all duration-300 active:translate-x-[2px] active:translate-y-[2px] active:bg-turquoise-400 active:shadow-none lg:text-2xl"
+          class="mt-3 cursor-pointer rounded-full border border-seasalt-100 bg-oxfordblue-300 px-8 py-2.5 text-lg font-semibold text-seasalt-100 shadow-PM transition-all duration-300 active:translate-x-[2px] active:translate-y-[2px] active:bg-turquoise-400 active:shadow-none sm:px-12 sm:text-xl lg:text-2xl"
           value="Solicita tu guía"
         />
       </form>

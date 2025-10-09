@@ -16,27 +16,25 @@ interface Props {
 const { titulo, descripcion, urlDestino, vertical, horizontal } = Astro.props;
 ---
 
-<div class="container__servicio">
-  <div
-    class="servicio text-4xl font-bold text-blackolive-100"
-    style={`--horizontal:${horizontal}% ; --vertical:${vertical}%;`}
-    data-urlDestino={urlDestino}
-    data-descripcion={descripcion}
-    data-titulo={titulo}
+<div
+  class="servicio text-4xl font-bold text-blackolive-100"
+  style={`--horizontal:${horizontal}% ; --vertical:${vertical}%;`}
+  data-urlDestino={urlDestino}
+  data-descripcion={descripcion}
+  data-titulo={titulo}
+>
+  <button
+    class="btn-modal relative cursor-pointer text-4xl font-bold text-blackolive-100 transition-all duration-300 hover:scale-110"
   >
-    <button
-      class="btn-modal relative cursor-pointer text-4xl font-bold text-blackolive-100 transition-all duration-300 hover:scale-110"
-    >
-      {titulo}
-      <div class="absolute -top-3 -right-5 size-[20px]">
-        <img
-          src={comillas.src}
-          alt="Comillas logo Planifica Mejor"
-          class="h-full w-full object-cover"
-        />
-      </div>
-    </button>
-  </div>
+    {titulo}
+    <div class="absolute -top-3 -right-5 size-[20px]">
+      <img
+        src={comillas.src}
+        alt="Comillas logo Planifica Mejor"
+        class="h-full w-full object-cover"
+      />
+    </div>
+  </button>
 </div>
 
 <style>

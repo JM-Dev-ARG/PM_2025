@@ -1,50 +1,26 @@
 [
     {
-        "img": "src/assets/logos/bbvaLogo.avif",
+        "img": "/logos/bbvaLogo.avif",
         "alt": "Logo BBVA"
     },
     {
-        "img": "src/assets/logos/cnpLogo.avif",
+        "img": "/logos/cnpLogo.avif",
         "alt": "Logo CNP"
     },
     {
-        "img": "src/assets/logos/lifeSegurosLogo.avif",
+        "img": "/logos/lifeSegurosLogo.avif",
         "alt": "Logo Life Seguros"
     },
     {
-        "img": "src/assets/logos/nobleLogo.avif",
+        "img": "/logos/nobleLogo.avif",
         "alt": "Logo Noble Seguros"
     },
     {
-        "img": "src/assets/logos/pacificoLogo.avif",
+        "img": "/logos/pacificoLogo.avif",
         "alt": "Logo Pacifico Seguros"
     },
     {
-        "img": "src/assets/logos/sanCristobalLogo.avif",
-        "alt": "Logo San Cristóbal Seguros"
-    },
-    {
-        "img": "src/assets/logos/bbvaLogo.avif",
-        "alt": "Logo BBVA"
-    },
-    {
-        "img": "src/assets/logos/cnpLogo.avif",
-        "alt": "Logo CNP"
-    },
-    {
-        "img": "src/assets/logos/lifeSegurosLogo.avif",
-        "alt": "Logo Life Seguros"
-    },
-    {
-        "img": "src/assets/logos/nobleLogo.avif",
-        "alt": "Logo Noble Seguros"
-    },
-    {
-        "img": "src/assets/logos/pacificoLogo.avif",
-        "alt": "Logo Pacifico Seguros"
-    },
-    {
-        "img": "src/assets/logos/sanCristobalLogo.avif",
+        "img": "/logos/sanCristobalLogo.avif",
         "alt": "Logo San Cristóbal Seguros"
     }
 ]

@@ -9,7 +9,7 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
   site: 'https://example.com',
 
-  output: "server",
+  output: "static",
   vite: {
     plugins: [tailwindcss()],
     resolve: {

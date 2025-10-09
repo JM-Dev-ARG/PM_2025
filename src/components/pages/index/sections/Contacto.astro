@@ -1,0 +1,85 @@
+---
+import Container from '@/components/base-components/Container.astro';
+import logo from '@/assets/svg/logo_vacio_linea.svg';
+import Titulo from '@/components/base-components/Titulo.astro';
+---
+
+<Container id="contacto">
+  <div class="flex w-full items-center justify-end overflow-hidden sm:pb-10">
+    <div
+      class="relative flex h-full w-full items-center justify-end rounded-l-[120px] rounded-r-3xl bg-linear-to-b from-oxfordblue-500 to-oxfordblue-400 py-8 sm:w-[80%] sm:rounded-l-[658px] sm:before:absolute sm:before:top-3 sm:before:-left-3 sm:before:-z-10 sm:before:h-full sm:before:w-full sm:before:rounded-l-[658px] sm:before:rounded-r-3xl sm:before:border-2 sm:before:border-turquoise-300"
+    >
+      <div
+        class="absolute top-[55%] -left-[30%] hidden h-auto w-[60%] -translate-y-1/2 items-center justify-center opacity-30 sm:block"
+      >
+        <img src={logo.src} alt="Logo Planifica Mejor" class="w-full object-contain" />
+      </div>
+
+      <form
+        action=""
+        class="flex w-[90%] flex-col items-center justify-center gap-4 sm:w-[70%] sm:justify-start"
+      >
+        <div class="w-[80%]">
+          <Titulo titulo="Contacto" textoClaro={true} />
+        </div>
+
+        <div class="flex w-[80%] flex-col gap-2">
+          <label for="nombre" class="font-semibold text-seasalt-100 sm:text-lg lg:text-xl"
+            >Nombre Completo</label
+          >
+          <input
+            type="text"
+            id="nombre"
+            inputmode="text"
+            class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
+            placeholder="Juan Lopez"
+          />
+        </div>
+
+        <div class="flex w-[80%] flex-col gap-2">
+          <label for="telefono" class="font-semibold text-seasalt-100 sm:text-lg lg:text-xl"
+            >Telefono</label
+          >
+          <input
+            type="tel"
+            id="telefono"
+            inputmode="tel"
+            class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
+            placeholder="Lopez"
+          />
+        </div>
+
+        <div class="flex w-[80%] flex-col gap-2">
+          <label for="email" class="font-semibold text-seasalt-100 sm:text-lg lg:text-xl"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            inputmode="email"
+            class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
+            placeholder="juanlopez@tumail.com"
+          />
+        </div>
+
+        <div class="flex w-[80%] flex-col gap-2">
+          <label for="mensaje" class="font-semibold text-seasalt-100 sm:text-lg lg:text-xl"
+            >Mensaje</label
+          >
+          <textarea
+            rows="4"
+            id="mensaje"
+            inputmode="text"
+            class="rounded-l-lg rounded-r-full bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
+            placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <input
+          type="submit"
+          class="mt-3 cursor-pointer rounded-full border border-seasalt-100 bg-oxfordblue-300 px-8 py-2.5 text-lg font-semibold text-seasalt-100 shadow-PM transition-all duration-300 active:translate-x-[2px] active:translate-y-[2px] active:bg-turquoise-400 active:shadow-none sm:px-12 sm:text-xl lg:text-2xl"
+          value="Solicita tu guía"
+        />
+      </form>
+    </div>
+  </div>
+</Container>
