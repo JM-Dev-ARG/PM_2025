@@ -13,7 +13,7 @@ import dataImg from '@/data/logosEmpresas.json';
     {
       dataImg.map((item) => (
         <div class="flex h-[120px] w-full items-center justify-center rounded-br-3xl p-4 shadow-PM transition duration-300 ease-in-out">
-          <img src={item.img} alt={item.alt} class="w-[60%] object-contain" />
+          <img src={item.img} alt={item.alt} class="w-full object-contain sm:w-[60%]" />
         </div>
       ))
     }
