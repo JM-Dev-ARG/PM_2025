@@ -21,3 +21,14 @@ import Layout from '@/layouts/Layout.astro';
   <Contacto />
   <Footer />
 </Layout>
+
+<script>
+  /* @ts-ignore */
+  import AOS from 'aos';
+  import 'aos/dist/aos.css'; // You can also use <link> for styles
+  // ..
+  AOS.init({
+    once: true,
+    duration: '800',
+  });
+</script>

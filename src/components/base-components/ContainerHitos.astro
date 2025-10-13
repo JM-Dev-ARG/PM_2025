@@ -19,41 +19,44 @@ import CardHitos from './CardHitos.astro';
 
     const observer = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const path = entry.target;
-            const index = Array.from(paths).indexOf(path);
+        setTimeout(() => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const path = entry.target;
+              const index = Array.from(paths).indexOf(path);
 
-            const delay = index * 1.3;
-            const delayLinea = (delay + 0.8) * 1;
-            /* @ts-ignore */
-            path.style.setProperty('--delay', `${delay}s`);
-            path.classList.add('animation-hito');
-
-            // animar línea del círculo solo si hay siguiente hito
-            if (esferas[index] && index < esferas.length - 1) {
-              // calcular ancho de la línea según distancia al siguiente círculo
-              const siguiente = esferas[index + 1];
-              const rect1 = esferas[index].getBoundingClientRect();
-              const rect2 = siguiente.getBoundingClientRect();
-
-              const distance = rect2.left - rect1.right;
-              const distance2 = rect1.right - rect2.left;
-
+              const delay = index * 1.3;
+              const delayLinea = (delay + 0.8) * 1;
               /* @ts-ignore */
-              esferas[index].style.setProperty('--line-width', distance + 'px');
-              /* @ts-ignore */
-              esferas[index].style.setProperty('--line-height', distance2 + 'px');
+              path.style.setProperty('--delay', `${delay}s`);
+              path.classList.add('animation-hito');
+              path.setAttribute('stroke-width', '2');
 
-              /* @ts-ignore */
-              esferas[index].style.setProperty('--delay-linea', `${delayLinea}s`);
+              // animar línea del círculo solo si hay siguiente hito
+              if (esferas[index] && index < esferas.length - 1) {
+                // calcular ancho de la línea según distancia al siguiente círculo
+                const siguiente = esferas[index + 1];
+                const rect1 = esferas[index].getBoundingClientRect();
+                const rect2 = siguiente.getBoundingClientRect();
 
-              esferas[index].classList.add('linea-animada');
+                const distance = rect2.left - rect1.right;
+                const distance2 = rect1.right - rect2.left;
+
+                /* @ts-ignore */
+                esferas[index].style.setProperty('--line-width', distance + 'px');
+                /* @ts-ignore */
+                esferas[index].style.setProperty('--line-height', distance2 + 'px');
+
+                /* @ts-ignore */
+                esferas[index].style.setProperty('--delay-linea', `${delayLinea}s`);
+
+                esferas[index].classList.add('linea-animada');
+              }
+
+              observer.unobserve(entry.target);
             }
-
-            observer.unobserve(entry.target);
-          }
-        });
+          });
+        }, 800);
       },
       { threshold: 0.5 }
     );

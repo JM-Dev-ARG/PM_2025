@@ -5,10 +5,10 @@ import dataPersonas from '@/data/itemsServiciosPersonas.json';
 ---
 
 <div class="mt-12 grid w-full place-items-center gap-6 lg:hidden">
-  <div class="mx-auto grid w-full place-items-center">
+  <div class="mx-auto grid w-full place-items-center" data-aos="fade-in" data-aos-delay="200">
     <h3
       class="relative inline-flex text-2xl font-black text-oxfordblue-500 lg:text-5xl"
-      aria-label="Empresas"
+      aria-label="Personas"
       ><span class="w-[40px]"></span><img
         src={imgFondo.src}
         alt=""
@@ -25,6 +25,8 @@ import dataPersonas from '@/data/itemsServiciosPersonas.json';
           data-urlDestino={item.urlDestino}
           data-descripcion={item.descripcion}
           data-titulo={item.titulo}
+          data-aos="fade-in"
+          data-aos-delay="200"
         >
           {item.titulo}
           <p>VER +</p>

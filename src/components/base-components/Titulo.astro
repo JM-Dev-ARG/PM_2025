@@ -13,17 +13,23 @@ const { titulo, texto, textoClaro } = Astro.props;
 <div class="flex w-full flex-col items-start justify-start gap-4 sm:gap-6">
   <h3
     class=`relative ml-8 text-3xl font-bold ${textoClaro? 'text-seasalt-100' : 'text-blackolive-100'} italic sm:text-4xl lg:ml-[5.4rem] lg:text-5xl`
+    data-aos="fade-right"
+    data-aos-delay="200"
   >
     {titulo}
     <div
       class="absolute top-0 -left-4 size-[40px] rounded-tl-[5px] border-l-5 border-turquoise-300 sm:size-[46px] sm:rounded-tl-[6px] sm:border-l-6 lg:-left-5 lg:size-[58px] lg:rounded-tl-[7px] lg:border-l-7"
-    ></div>
+      data-aos="fade-down"
+      data-aos-delay="1100"></div>
     <div
       class="absolute top-0 -left-4 size-[40px] rounded-br-[5px] border-b-5 border-risdblue-300 sm:size-[46px] sm:rounded-br-[6px] sm:border-b-6 lg:-left-5 lg:size-[58px] lg:rounded-br-[7px] lg:border-b-7"
-    ></div>
+      data-aos="fade-left"
+      data-aos-delay="1100"></div>
   </h3>
   <p
     class="ml-4 w-[80%] text-base leading-tight tracking-[5%] text-oxfordblue-400 sm:text-lg lg:ml-16 lg:text-xl"
+    data-aos="fade-up"
+    data-aos-delay="500"
   >
     {texto}
   </p>

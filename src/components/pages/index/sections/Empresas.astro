@@ -1,5 +1,4 @@
 ---
-import Carrousel from '@/components/base-components/Carrousel.astro';
 import Container from '@/components/base-components/Container.astro';
 import Titulo from '@/components/base-components/Titulo.astro';
 
@@ -11,8 +10,12 @@ import dataImg from '@/data/logosEmpresas.json';
 
   <div class="my-10 grid w-full grid-cols-2 place-items-center gap-4 sm:w-[80%] lg:grid-cols-3">
     {
-      dataImg.map((item) => (
-        <div class="flex h-[120px] w-full items-center justify-center rounded-br-3xl p-4 shadow-PM transition duration-300 ease-in-out">
+      dataImg.map((item, index) => (
+        <div
+          class="flex h-[120px] w-full items-center justify-center rounded-br-3xl p-4 shadow-PM transition duration-300 ease-in-out"
+          data-aos="fade-up"
+          data-aos-delay={200 + index * 100}
+        >
           <img src={item.img} alt={item.alt} class="w-full object-contain sm:w-[60%]" />
         </div>
       ))

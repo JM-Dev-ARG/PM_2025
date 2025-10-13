@@ -10,6 +10,8 @@ const { fecha, titulo, descripcion } = Astro.props;
 <div class="relative flex w-full flex-1 items-center justify-center gap-6 lg:flex-col">
   <div
     class="hito-esfera relative mx-auto grid aspect-square w-[20%] place-items-center rounded-t-full rounded-br-full bg-oxfordblue-500 sm:w-[17%] lg:w-[55%]"
+    data-aos="fade-up"
+    data-aos-delay="300"
   >
     <p class="text-lg font-semibold text-seasalt-100 lg:text-2xl 2xl:text-3xl">{fecha}</p>
     <div class="absolute right-1 bottom-1 aspect-square h-full">
@@ -25,7 +27,7 @@ const { fecha, titulo, descripcion } = Astro.props;
           class="svg-hito"
           d="M46.9131 1C72.2702 1 92.8262 21.5569 92.8262 46.9141C92.8262 72.2722 72.2693 92.8301 46.9111 92.8301H1V46.9131C1.00005 21.556 21.556 1.00006 46.9131 1Z"
           stroke="#1AD6B4"
-          stroke-width="2"></path>
+          stroke-width="0"></path>
       </svg>
     </div>
   </div>
@@ -33,11 +35,15 @@ const { fecha, titulo, descripcion } = Astro.props;
   <div class="flex flex-1 items-center justify-center gap-6 lg:flex-col lg:gap-1">
     <p
       class="w-[35%] text-center text-xl font-semibold text-pretty sm:w-[20%] lg:w-full 2xl:text-2xl"
+      data-aos="fade-up"
+      data-aos-delay="400"
     >
       {titulo}</p
     >
     <p
       class="flex-1 text-left leading-tight font-light text-pretty lg:text-center lg:text-lg 2xl:text-xl"
+      data-aos="fade-up"
+      data-aos-delay="500"
     >
       {descripcion}
     </p>

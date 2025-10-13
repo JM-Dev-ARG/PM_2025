@@ -7,8 +7,8 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
   class="empresas__container flex w-full flex-col items-center justify-between gap-4 overflow-hidden sm:w-[70%] lg:hidden xl:px-6"
 >
   {
-    dataEmpresas.map((item) => (
-      <div class="empresas__card__movil">
+    dataEmpresas.map((item, index) => (
+      <div class="empresas__card__movil" data-aos="fade-right" data-aos-delay={200 + index * 200}>
         <div class="card__content_normal">
           <h3 class="titulo_card_empresas font-bold text-seasalt-100">{item.titulo}</h3>
           <div class="descripcion_card_empresas text-base">
@@ -114,65 +114,5 @@ import dataEmpresas from '@/data/serviciosEmpresas.json';
         transition-behavior: allow-discrete;
       }
     }
-  }
-
-  .empresas__card:not(:hover) {
-    transition-delay: 0.3s;
-  }
-  .empresas__card:not(:hover) .card__content_normal .descripcion_card_empresas {
-    transition-delay: 0.4s;
-  }
-  .empresas__card:not(:hover) .card__content_normal .titulo_card_empresas {
-    transition-delay: 0.4s;
-  }
-
-  .empresas__container:has(.empresas__card:hover) .empresas__card:not(:hover) {
-    flex: 0;
-    border-radius: 60px;
-  }
-  .empresas__container:has(.empresas__card:hover)
-    .empresas__card:hover
-    .card__content_normal
-    .descripcion_card_empresas
-    .texto__corto {
-    opacity: 0;
-  }
-  .empresas__container:has(.empresas__card:hover)
-    .empresas__card:hover
-    .card__content_normal
-    .texto__expandido {
-    opacity: 1;
-    transition-delay: 0.5s; /* display: flex; */
-  }
-
-  .empresas__container:has(.empresas__card:hover)
-    .empresas__card:not(:hover)
-    .card__content_normal
-    .descripcion_card_empresas
-    .texto__expandido {
-    opacity: 0;
-    display: none;
-    transition-delay: 0s;
-    transition-duration: 0.3s;
-  }
-
-  .empresas__container:has(.empresas__card:hover)
-    .empresas__card:not(:hover)
-    .card__content_normal
-    .descripcion_card_empresas {
-    opacity: 0;
-    height: 0;
-    transition-delay: 0s;
-    transition-duration: 0.2s;
-  }
-  .empresas__container:has(.empresas__card:hover)
-    .empresas__card:not(:hover)
-    .card__content_normal
-    .titulo_card_empresas {
-    height: 100%;
-    transform: rotate(-90deg);
-    font-size: 32px;
-    text-wrap: nowrap;
-    transition-delay: 0s;
   }
 </style>
