@@ -2,6 +2,7 @@
 import Container from '@/components/base-components/Container.astro';
 import logo from '@/assets/svg/logo_vacio_linea.svg';
 import Titulo from '@/components/base-components/Titulo.astro';
+import { actions } from 'astro:actions';
 ---
 
 <Container id="contacto">
@@ -22,7 +23,9 @@ import Titulo from '@/components/base-components/Titulo.astro';
       </div>
 
       <form
-        action=""
+        id="formulario_contacto"
+        method="POST"
+        action={actions.sendMail}
         class="flex w-[90%] flex-col items-center justify-center gap-4 sm:w-[70%] sm:justify-start"
       >
         <div class="w-[80%]">
@@ -36,6 +39,7 @@ import Titulo from '@/components/base-components/Titulo.astro';
           <input
             type="text"
             id="nombre"
+            name="nombre"
             inputmode="text"
             class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
             placeholder="Juan Lopez"
@@ -50,6 +54,7 @@ import Titulo from '@/components/base-components/Titulo.astro';
           <input
             type="tel"
             id="telefono"
+            name="telefono"
             inputmode="tel"
             class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
             placeholder="11 1234 5678"
@@ -63,6 +68,7 @@ import Titulo from '@/components/base-components/Titulo.astro';
           <input
             type="email"
             id="email"
+            name="email"
             inputmode="email"
             class="rounded-l-lg rounded-r-[20px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
             placeholder="juanlopez@tumail.com"
@@ -77,17 +83,60 @@ import Titulo from '@/components/base-components/Titulo.astro';
           <textarea
             rows="4"
             id="mensaje"
+            name="mensaje"
             inputmode="text"
             class="rounded-l-3xl rounded-r-[200px] bg-seasalt-100 py-2 pl-2 placeholder:text-blackolive-100/60 focus:outline-none"
             placeholder="Escribe tu mensaje aquí..."></textarea>
         </div>
 
-        <input
+        <button
           type="submit"
           class="mt-3 cursor-pointer rounded-full border border-seasalt-100 bg-oxfordblue-300 px-8 py-2.5 text-lg font-semibold text-seasalt-100 shadow-PM transition-all duration-300 active:translate-x-[2px] active:translate-y-[2px] active:bg-turquoise-400 active:shadow-none sm:px-12 sm:text-xl lg:text-2xl"
           value="Solicita tu guía"
-        />
+        >
+          Solicita tu guía
+        </button>
       </form>
     </div>
   </div>
 </Container>
+
+<script>
+  import { actions } from 'astro:actions';
+  import Swal from 'sweetalert2';
+
+  const form = document.getElementById('formulario_contacto') as HTMLFormElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const nombre = formData.get('nombre') as string;
+    const email = formData.get('email') as string;
+    const tel = formData.get('telefono') as string;
+    const msj = formData.get('mensaje') as string;
+
+    const { data, error } = await actions.sendMail({
+      nombre,
+      email,
+      telefono: tel,
+      mensaje: msj,
+    });
+    if (error) {
+      console.error(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Algo salió mal, intentá de nuevo por favor',
+      });
+      form.reset();
+    } else {
+      Swal.fire({
+        title: 'Gracias por contactarnos ✉️',
+        text: 'En breve nos estaremos comunicando con vos',
+        showConfirmButton: false,
+        timer: 5000,
+      });
+      form.reset();
+    }
+  });
+</script>
