@@ -1,0 +1,24 @@
+---
+import imgPremio from '@/assets/img/premio.avif';
+interface Props {
+  titulo: string;
+  descripcion?: string;
+}
+
+const { titulo, descripcion } = Astro.props;
+---
+
+<div
+  class="relative flex aspect-square h-[220px] flex-col items-center justify-center object-cover text-center transition-all duration-300 ease-linear xl:h-[250px]"
+  data-aos="fade-up"
+>
+  <img
+    src={imgPremio.src}
+    alt=""
+    class="absolute top-1/2 left-1/2 -z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 object-contain object-center opacity-20 drop-shadow-xs drop-shadow-blackolive-100"
+  />
+  <h3 class="font-titulo font-bold text-blackolive-100 lg:text-xl xl:text-2xl">{titulo}</h3>
+  <p class="text-blackolive-100">
+    {descripcion}
+  </p>
+</div>

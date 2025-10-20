@@ -1,33 +1,10 @@
 ---
-import imgPremio from '@/assets/mock/premio.png';
+import dataPremios from '@/data/premios.json';
+import CardPremios from '@/components/base-components/CardPremios.astro';
 ---
 
 <div
-  class="grid h-auto grid-cols-2 place-items-center items-center justify-center gap-12 sm:grid-cols-4 lg:max-h-[200px]"
+  class="mx-auto grid h-auto grid-cols-1 place-items-center gap-x-12 gap-y-6 sm:grid-cols-2 lg:my-12 lg:grid-cols-4 xl:gap-16"
 >
-  <img
-    src={imgPremio.src}
-    alt=""
-    class="aspect-square h-[100px] object-cover transition-all duration-300 ease-linear lg:h-[150px] lg:grayscale-100 lg:hover:grayscale-0"
-    data-aos="fade-up"
-  />
-  <img
-    src={imgPremio.src}
-    alt=""
-    class="aspect-square h-[100px] object-cover transition-all duration-300 ease-linear lg:h-[150px] lg:grayscale-100 lg:hover:grayscale-0"
-    data-aos="fade-up"
-    data-aos-delay="100"
-  /><img
-    src={imgPremio.src}
-    alt=""
-    class="aspect-square h-[100px] object-cover transition-all duration-300 ease-linear lg:h-[150px] lg:grayscale-100 lg:hover:grayscale-0"
-    data-aos="fade-up"
-    data-aos-delay="200"
-  /><img
-    src={imgPremio.src}
-    alt=""
-    class="aspect-square h-[100px] object-cover transition-all duration-300 ease-linear lg:h-[150px] lg:grayscale-100 lg:hover:grayscale-0"
-    data-aos="fade-up"
-    data-aos-delay="300"
-  />
+  {dataPremios.map((item) => <CardPremios titulo={item.titulo} descripcion={item.descripcion} />)}
 </div>
