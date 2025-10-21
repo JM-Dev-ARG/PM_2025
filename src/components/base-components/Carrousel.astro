@@ -15,7 +15,7 @@ const { direction, duration, pause, className, classSlider } = Astro.props;
   data-paused={pause}
   data-duration={duration}
   data-direction={direction}
-  data-aos="fade-up"
+  data-aos="fade-right"
   data-aos-duration="1000"
   data-aos-delay="300"
   data-aos-once="true"
@@ -30,47 +30,41 @@ const { direction, duration, pause, className, classSlider } = Astro.props;
     width: 100%;
   }
 
-  .contenedor[data-animated="true"] {
+  .contenedor[data-animated='true'] {
     overflow-x: hidden;
 
     mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
-    -webkit-mask: linear-gradient(
-      90deg,
-      transparent,
-      white 3%,
-      white 97%,
-      transparent
-    );
+    -webkit-mask: linear-gradient(90deg, transparent, white 3%, white 97%, transparent);
   }
-  .contenedor[data-paused="true"]:hover .slider {
+  .contenedor[data-paused='true']:hover .slider {
     cursor: pointer;
     animation-play-state: paused;
   }
 
-  .contenedor[data-paused="true"]:focus .slider {
+  .contenedor[data-paused='true']:focus .slider {
     cursor: pointer;
     animation-play-state: paused;
   }
-  .contenedor[data-direction="right"] {
+  .contenedor[data-direction='right'] {
     --_animation-direction: reverse;
   }
 
-  .contenedor[data-direction="left"] {
+  .contenedor[data-direction='left'] {
     --_animation-direction: forwards;
   }
 
-  .contenedor[data-duration="fast"] {
+  .contenedor[data-duration='fast'] {
     --_animation-duration: 10s;
   }
 
-  .contenedor[data-duration="slow"] {
+  .contenedor[data-duration='slow'] {
     --_animation-duration: 70s;
   }
 
-  .contenedor[data-animated="true"] .slider {
+  .contenedor[data-animated='true'] .slider {
     flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 30s)
-      var(--_animation-direction, forwards) linear infinite;
+    animation: scroll var(--_animation-duration, 30s) var(--_animation-direction, forwards) linear
+      infinite;
   }
   .slider {
     width: max-content;
@@ -89,24 +83,24 @@ const { direction, duration, pause, className, classSlider } = Astro.props;
 </style>
 
 <script>
-  const contenedores = document.querySelectorAll(".contenedor");
+  const contenedores = document.querySelectorAll('.contenedor');
 
-  if (!window.matchMedia("(prefers-reduce-motion: reduce)").matches) {
+  if (!window.matchMedia('(prefers-reduce-motion: reduce)').matches) {
     addAnimation();
   } else {
-    console.log("Animation is disabled due to prefers-reduce-motion.");
+    console.log('Animation is disabled due to prefers-reduce-motion.');
   }
 
   function addAnimation() {
     contenedores.forEach((contenedor) => {
-      contenedor.setAttribute("data-animated", "true");
+      contenedor.setAttribute('data-animated', 'true');
 
-      const slider = contenedor.querySelector(".slider") as HTMLElement;
+      const slider = contenedor.querySelector('.slider') as HTMLElement;
       const sliderItems = Array.from(slider.children);
 
       sliderItems.forEach((item) => {
         const duplicarItem = item.cloneNode(true) as HTMLElement;
-        duplicarItem.setAttribute("aria-hidden", "true");
+        duplicarItem.setAttribute('aria-hidden', 'true');
 
         slider.appendChild(duplicarItem);
       });

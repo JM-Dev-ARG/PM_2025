@@ -1,0 +1,18 @@
+---
+import CardCarrouselComentarios from '@/components/base-components/CardCarrouselComentarios.astro';
+import Carrousel from '@/components/base-components/Carrousel.astro';
+import Container from '@/components/base-components/Container.astro';
+import dataComentarios from '@/data/comentarios.json';
+---
+
+<Container id="comentarios">
+  <div class="mx-auto grid w-full place-items-center sm:w-[90%] lg:w-[80%]"
+    ><Carrousel classSlider="gap-8 my-8" duration="slow" direction="right">
+      {
+        dataComentarios.map((item) => (
+          <CardCarrouselComentarios nombre={item.nombre} comentario={item.comentario} />
+        ))
+      }
+    </Carrousel>
+  </div>
+</Container>
