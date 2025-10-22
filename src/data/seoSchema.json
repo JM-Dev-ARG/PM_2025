@@ -1,7 +1,7 @@
 {
   "logo": "https://example.com/logos/logo_empresa.svg",
   "contactPoint": {
-    "telephone": "+....",
+    "telephone": "+5401151325016",
     "areaServed": "AR",
     "availableLanguage": "Spanish"
   },
@@ -14,16 +14,15 @@
     }
   },
   "sameAs": [
-    "https://www.instagram.com/....",
-    "https://www.linkedin.com/in/..../",
-    "https://www.facebook.com/...",
-    "https://www.youtube.com/...."
+    "https://www.instagram.com/planificamejor/",
+    "https://www.linkedin.com/in/cristian-de-benedetto-a490a569/",
+    "https://www.facebook.com/planificamejor/"
   ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "domicilio",
-    "addressLocality": "localidad",
-    "addressRegion": "provincia",
+    "addressLocality": "Capital Federal",
+    "addressRegion": "Capital Federal",
     "postalCode": "cp",
     "addressCountry": "Argentina"
   }

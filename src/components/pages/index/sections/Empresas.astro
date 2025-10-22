@@ -16,7 +16,12 @@ import dataImg from '@/data/logosEmpresas.json';
           data-aos="fade-up"
           data-aos-delay={0 + index * 100}
         >
-          <img src={item.img} alt={item.alt} class="w-full object-contain sm:w-[60%]" />
+          <img
+            src={item.img}
+            alt={item.alt}
+            loading="lazy"
+            class="w-full object-contain sm:w-[60%]"
+          />
         </div>
       ))
     }

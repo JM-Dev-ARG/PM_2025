@@ -17,17 +17,20 @@ import Subrayado from '@/components/base-components/Subrayado.astro';
     >
       <img
         src={logoCompacto.src}
+        loading="lazy"
         alt="Logotipo Planifica Mejor compacto"
         class="w-[90%] object-contain lg:hidden"
       />
       <div class="flex w-full items-center justify-start">
         <img
           src={logoSolo.src}
+          loading="lazy"
           alt="Logotipo Planifica Mejor"
           class="hidden w-[30%] object-contain object-center lg:block 2xl:w-[40%]"
         />
         <img
           src={logoNombre.src}
+          loading="lazy"
           alt="Logotipo Planifica Mejor- palabras"
           class="-ml-16 hidden object-contain lg:block lg:w-[75%] xl:w-[70%]"
         />

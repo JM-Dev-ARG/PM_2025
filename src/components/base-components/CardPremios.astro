@@ -14,7 +14,8 @@ const { titulo, descripcion } = Astro.props;
 >
   <img
     src={imgPremio.src}
-    alt=""
+    alt="imagen premio"
+    loading="lazy"
     class="absolute top-1/2 left-1/2 -z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 object-contain object-center opacity-20 drop-shadow-xs drop-shadow-blackolive-100"
   />
   <h3 class="font-titulo font-bold text-blackolive-100 lg:text-xl xl:text-2xl">{titulo}</h3>
